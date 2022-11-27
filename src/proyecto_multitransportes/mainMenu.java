@@ -8,12 +8,12 @@ package proyecto_multitransportes;
  *
  * @author User
  */
-public class menu extends javax.swing.JFrame {
+public class mainMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form menu
      */
-    public menu() {
+    public mainMenu() {
         initComponents();
     }
 
@@ -28,6 +28,9 @@ public class menu extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -36,8 +39,24 @@ public class menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jMenuBar1.setBackground(new java.awt.Color(242, 242, 242));
+
+        jMenu2.setForeground(new java.awt.Color(0, 204, 0));
         jMenu2.setText("Catalogos");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lado-del-camion.png"))); // NOI18N
+        jMenu7.setText("Proveedores");
+        jMenu2.add(jMenu7);
+
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuarios-alt.png"))); // NOI18N
+        jMenu8.setText("Clientes");
+        jMenu2.add(jMenu8);
+
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/volante.png"))); // NOI18N
+        jMenu9.setText("Conductores");
+        jMenu2.add(jMenu9);
+
         jMenuBar1.add(jMenu2);
 
         jMenu6.setText("Vehiculos");
@@ -93,20 +112,21 @@ public class menu extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new menu().setVisible(true);
+                new mainMenu().setVisible(true);
             }
         });
     }
@@ -118,6 +138,9 @@ public class menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
