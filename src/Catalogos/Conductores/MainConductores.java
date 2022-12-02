@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Catalogos;
+package Catalogos.Conductores;
 
 import Catalogos.Clientes.OCClientes;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Daniel
+ * @author Tawnny
  */
 public class MainConductores {
     private ArrayList<OCConductores> arConductores=new ArrayList();    

@@ -1,5 +1,6 @@
-package Catalogos;
+package Catalogos.Proveedores;
 
+import Catalogos.personas;
 import Catalogos.personas;
 import Catalogos.personas;
 import javax.swing.JOptionPane;
