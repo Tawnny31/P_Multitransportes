@@ -74,6 +74,11 @@ public class ViewClientes extends javax.swing.JFrame {
 
         chk_estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chk_estado.setText("Estado");
+        chk_estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chk_estadoActionPerformed(evt);
+            }
+        });
 
         btn_agregar.setBackground(new java.awt.Color(235, 235, 249));
         btn_agregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -230,8 +235,7 @@ public class ViewClientes extends javax.swing.JFrame {
                                 .addComponent(txt_correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(chk_estado)
-                                .addGap(82, 82, 82)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(82, 82, 82))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,7 +243,7 @@ public class ViewClientes extends javax.swing.JFrame {
                         .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -345,6 +349,10 @@ public class ViewClientes extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void chk_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_estadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chk_estadoActionPerformed
 String[] elementos = new String[] { "Elemento 1", "Elemento 2",
 				"Elemento 3", "Elemento 4" };
     /**

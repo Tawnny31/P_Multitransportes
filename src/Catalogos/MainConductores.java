@@ -4,6 +4,7 @@
  */
 package Catalogos;
 
+import Catalogos.Clientes.OCClientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -14,17 +15,21 @@ import javax.swing.JOptionPane;
 public class MainConductores {
     private ArrayList<OCConductores> arConductores=new ArrayList();    
        
-          public void agregar(int id, String nombre, String ciudad, String direccion, int telefono, String correo) {
-      int x;
-       String ape = "sddfs";
-
+          public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
+      
         OCConductores con=new OCConductores();
+        
         con.setNombre(nombre);
-        con.setApellido(ape);
         con.setId(id);
         con.setCiudad(ciudad);
-        con.setTelefono(ape);
+        con.setTelefono(telefono);
+        con.setDireccion(direccion);
         con.setCorreo(correo);
+                        if (estado == true) {
+                            con.setEstado('A');
+                        } else {
+                              con.setEstado('I');
+                        }     
         arConductores.add(con);
          
         JOptionPane.showMessageDialog(null, "Conductor agregado");
@@ -41,6 +46,41 @@ public class MainConductores {
                 "El arreglo contiene:\n" + s);
     }
     
-///falta el editar y el inactivar es lo mismo
+ public String[] buscar(int id) {
+        int x;
+        String data[] = new String[7];
+        for (x = 0; x < arConductores.size(); x++) {
+            if (id == arConductores.get(x).getId()) {
+                data[0] = Integer.toString(arConductores.get(x).getId());
+                data[1] = arConductores.get(x).getNombre();
+                data[2] = arConductores.get(x).getCiudad();
+                data[3] = arConductores.get(x).getDireccion();
+                data[4] = arConductores.get(x).getTelefono();
+                data[5] = arConductores.get(x).getCorreo();
+                data[6] = Integer.toString(arConductores.get(x).getEstado());
+            }
+        }
+        return data;
+    }
+
+    public void modificar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
+        int x;
+        for (x = 0; x < arConductores.size(); x++) {
+            if (id == arConductores.get(x).getId()) {
+
+                arConductores.get(x).setNombre(nombre);
+                arConductores.get(x).setDireccion(direccion);
+                arConductores.get(x).setTelefono(telefono);
+                arConductores.get(x).setCorreo(correo);
+                arConductores.get(x).setCiudad(ciudad);
+                if (estado == true) {
+                    arConductores.get(x).setEstado('A');
+                } else {
+                    arConductores.get(x).setEstado('I');
+                }
+            }
+        }
+    }
+
 }
 

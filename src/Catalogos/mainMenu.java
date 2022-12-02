@@ -231,7 +231,7 @@ ViewClientes vc= new ViewClientes();
     }//GEN-LAST:event_btn_cajasActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        
+dispose();        
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
