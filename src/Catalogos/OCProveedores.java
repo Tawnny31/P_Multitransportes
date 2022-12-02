@@ -1,5 +1,10 @@
-package proyecto_multitransportes;
-public class conductor extends personas{
+package Catalogos;
+
+import Catalogos.personas;
+import Catalogos.personas;
+import javax.swing.JOptionPane;
+
+public class OCProveedores extends personas {
 
     public int getId() {
         return id;
@@ -56,6 +61,8 @@ public class conductor extends personas{
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
-    
+    public void ver(){
+            JOptionPane.showMessageDialog(null,
+            "Id:\n"+id);
+    }
 }
