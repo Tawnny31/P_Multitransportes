@@ -39,11 +39,16 @@ public class MainConductores {
         int x;
         String s = "";
         for (x = 0; x < arConductores.size(); x++) {
-            s = s + arConductores.get(x).getNombre() + " "
-                    + arConductores.get(x).getId() + "\n";
+             s = s + arConductores.get(x).getId() + " | Nombre: "
+                    + arConductores.get(x).getNombre() + " | Ciudad: "
+                    +arConductores.get(x).getCiudad()+ " | Direccion: "
+                    +arConductores.get(x).getDireccion() + " | Telefono: "
+                    +arConductores.get(x).getTelefono() + " | Correo: "
+                    +arConductores.get(x).getCorreo()+ " | Estado: "
+                    +arConductores.get(x).getEstado()+ "\n";
         }
         JOptionPane.showMessageDialog(null,
-                "El arreglo contiene:\n" + s);
+                "**Lista de conductores**\n" + s);
     }
     
  public String[] buscar(int id) {

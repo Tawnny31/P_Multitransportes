@@ -35,11 +35,16 @@ public class MainClientes {
         int x;
         String s = "";
         for (x = 0; x < arCliente.size(); x++) {
-            s = s + arCliente.get(x).getNombre() + " "
-                    + arCliente.get(x).getId() + "\n";
+            s = s + arCliente.get(x).getId() + " | Nombre: "
+                    + arCliente.get(x).getNombre() + " | Ciudad: "
+                    +arCliente.get(x).getCiudad()+ " | Direccion: "
+                    +arCliente.get(x).getDireccion() + " | Telefono: "
+                    +arCliente.get(x).getTelefono() + " | Correo: "
+                    +arCliente.get(x).getCorreo()+ " | Estado: "
+                    +arCliente.get(x).getEstado()+ "\n";
         }
         JOptionPane.showMessageDialog(null,
-                "El arreglo contiene:\n" + s);
+                "**Lista de clientes**\n" + s);
     }
 
     public String[] buscar(int id) {

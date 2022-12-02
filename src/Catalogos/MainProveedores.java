@@ -39,12 +39,18 @@ public class MainProveedores {
         int x;
         String s = "";
         for (x = 0; x < arProveedores.size(); x++) {
-            s = s + arProveedores.get(x).getNombre() + " "
-                    + arProveedores.get(x).getId() + "\n";
+            s = s + arProveedores.get(x).getId() + " | Nombre: "
+                    + arProveedores.get(x).getNombre() + " | Ciudad: "
+                    +arProveedores.get(x).getCiudad()+ " | Direccion: "
+                    +arProveedores.get(x).getDireccion() + " | Telefono: "
+                    +arProveedores.get(x).getTelefono() + " | Correo: "
+                    +arProveedores.get(x).getCorreo()+ " | Estado: "
+                    +arProveedores.get(x).getEstado()+ "\n";
         }
         JOptionPane.showMessageDialog(null,
-                "El arreglo contiene:\n" + s);
+                "**Lista de proveedores**\n" + s);
     }
+    
     
  public String[] buscar(int id) {
         int x;
