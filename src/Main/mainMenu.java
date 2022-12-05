@@ -1,6 +1,6 @@
 
 
-package Catalogos;
+package Main;
 
 
 
@@ -8,8 +8,8 @@ import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Clientes.OCClientes;
 import Catalogos.Clientes.ViewClientes;
+import Catalogos.Proveedores.ViewPaquetes;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -200,6 +200,7 @@ public class mainMenu extends javax.swing.JFrame {
 ViewProveedores vp = new ViewProveedores();
 ViewConductores vco= new ViewConductores();
 ViewClientes vc= new ViewClientes();
+ViewPaquetes mp = new ViewPaquetes();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
           vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
@@ -217,7 +218,7 @@ ViewClientes vc= new ViewClientes();
     }//GEN-LAST:event_btn_vehiculosActionPerformed
 
     private void btn_destinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_destinosActionPerformed
-        // TODO add your handling code here:
+       mp.setVisible(true);
     }//GEN-LAST:event_btn_destinosActionPerformed
 
     private void btn_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultasActionPerformed

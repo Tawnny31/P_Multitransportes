@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Tawnny
  */
 public class MainProveedores {
-      private ArrayList<OCProveedores> arProveedores=new ArrayList();    
+     public static  ArrayList<OCProveedores> arProveedores=new ArrayList();    
        
           public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
 
@@ -25,6 +25,7 @@ public class MainProveedores {
         pro.setTelefono(telefono);
         pro.setDireccion(direccion);
         pro.setCorreo(correo);
+        
                         if (estado == true) {
                             pro.setEstado('A');
                         } else {
@@ -70,8 +71,7 @@ public class MainProveedores {
     }
 
     public void modificar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
-        int x;
-        for (x = 0; x < arProveedores.size(); x++) {
+        for (int x = 0; x < arProveedores.size(); x++) {
             if (id == arProveedores.get(x).getId()) {
 
                 arProveedores.get(x).setNombre(nombre);
@@ -87,5 +87,18 @@ public class MainProveedores {
             }
         }
     }
-
+    
+    
+    public String validarestado(int id ){
+        String data ="Hola Mundo";
+        for (int x = 0; x < arProveedores.size(); x++) {
+            if (id == arProveedores.get(x).getId()) {
+                data= Integer.toString(arProveedores.get(x).getEstado());
+            }
+        }
+        return data;
+    }
+    
+    
+    
 }

@@ -1,4 +1,4 @@
-package Catalogos;
+package Main;
 
 import Catalogos.Clientes.*;
 import Catalogos.Clientes.MainClientes;
@@ -164,9 +164,10 @@ public class Login extends javax.swing.JFrame {
     private void txt_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_passwordActionPerformed
-
+       mainMenu  m = new mainMenu();
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-       
+m.setVisible(true);
+dispose();
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
