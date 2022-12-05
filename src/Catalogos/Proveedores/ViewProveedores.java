@@ -1,5 +1,4 @@
 package Catalogos.Proveedores;
-package Catalogos.Paquetes;
 
 import javax.swing.JOptionPane;
 
