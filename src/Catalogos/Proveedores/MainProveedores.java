@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Catalogos.Proveedores;
 
-import Catalogos.Clientes.OCClientes;
+
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -89,14 +85,14 @@ public class MainProveedores {
     }
     
     
-    public String validarestado(int id ){
-        String data ="Hola Mundo";
+   public boolean buscarid(int id) {
+        boolean estado = false;
         for (int x = 0; x < arProveedores.size(); x++) {
             if (id == arProveedores.get(x).getId()) {
-                data= Integer.toString(arProveedores.get(x).getEstado());
+                estado = true;
             }
         }
-        return data;
+        return estado;
     }
     
     

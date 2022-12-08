@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author Tawnny
  */
 public class MainConductores {
-    private ArrayList<OCConductores> arConductores=new ArrayList();    
+    public static ArrayList<OCConductores> arConductores=new ArrayList();    
        
           public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
       
@@ -50,7 +50,16 @@ public class MainConductores {
         JOptionPane.showMessageDialog(null,
                 "**Lista de conductores**\n" + s);
     }
-    
+        public boolean buscarid(int id) {
+        boolean estado = false;
+        for (int x = 0; x < arConductores.size(); x++) {
+            if (id == arConductores.get(x).getId()) {
+                estado = true;
+            }
+        }
+        return estado;
+    }
+        
  public String[] buscar(int id) {
         int x;
         String data[] = new String[7];

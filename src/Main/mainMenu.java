@@ -8,7 +8,7 @@ import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Clientes.OCClientes;
 import Catalogos.Clientes.ViewClientes;
-import Catalogos.Proveedores.ViewPaquetes;
+import Catalogos.Paquetes.ViewPaquetes;
 import java.util.ArrayList;
 
 /**

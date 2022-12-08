@@ -1,7 +1,9 @@
+package Catalogos.Paquetes;
 package Catalogos.Proveedores;
 
 import Catalogos.Proveedores.MainProveedores;
-import Catalogos.Proveedores.ViewProveedores;
+import Catalogos.Clientes.MainClientes;
+import Catalogos.Proveedores.MainProveedores;
 
 
 /**
@@ -272,6 +274,7 @@ public class ViewPaquetes extends javax.swing.JFrame {
 //chk_estado.setSelected(false);
     }//GEN-LAST:event_btn_agregarActionPerformed
 MainProveedores mp = new MainProveedores();
+MainClientes cl = new MainClientes();
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
 mp.mostrar();
     }//GEN-LAST:event_btn_verActionPerformed
@@ -281,7 +284,8 @@ mp.mostrar();
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-        
+
+        System.out.print( cl.buscarid(Integer.parseInt(txt_id.getText())));
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     /**

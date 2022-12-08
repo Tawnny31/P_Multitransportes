@@ -6,6 +6,6 @@ import Catalogos.personas;
 import Catalogos.personas;
 import javax.swing.JOptionPane;
 
-public class OCFacturas extends {// falta catalogo servicios
+public class OCFacturas  {// falta catalogo servicios
     
 }

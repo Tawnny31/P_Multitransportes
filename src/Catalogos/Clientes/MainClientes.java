@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class MainClientes {
 
-    private ArrayList<OCClientes> arCliente = new ArrayList();
+    public static ArrayList<OCClientes> arCliente = new ArrayList();
 
     public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
 
@@ -45,6 +45,16 @@ public class MainClientes {
         }
         JOptionPane.showMessageDialog(null,
                 "**Lista de clientes**\n" + s);
+    }
+    
+    public boolean buscarid(int id) {
+        boolean estado = false;
+        for (int x = 0; x < arCliente.size(); x++) {
+            if (id == arCliente.get(x).getId()) {
+                estado = true;
+            }
+        }
+        return estado;
     }
 
     public String[] buscar(int id) {
