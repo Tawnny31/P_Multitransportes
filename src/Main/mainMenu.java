@@ -5,8 +5,7 @@ package Main;
 
 
 import Catalogos.Proveedores.ViewProveedores;
-import Catalogos.Conductores.ViewConductores;
-import Catalogos.Clientes.OCClientes;
+import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
 import Catalogos.Paquetes.ViewPaquetes;
 import java.util.ArrayList;
@@ -16,8 +15,6 @@ import java.util.ArrayList;
  * @author User
  */
 public class mainMenu extends javax.swing.JFrame {
-    protected  ArrayList<OCClientes> cliente = new ArrayList();
-    
     
 
     /**
@@ -198,15 +195,16 @@ public class mainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 ViewProveedores vp = new ViewProveedores();
-ViewConductores vco= new ViewConductores();
+
 ViewClientes vc= new ViewClientes();
 ViewPaquetes mp = new ViewPaquetes();
+ViewVehiculos vve = new ViewVehiculos();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
           vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
 
     private void btn_conductores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conductores1ActionPerformed
-         vco.setVisible(true);
+   
     }//GEN-LAST:event_btn_conductores1ActionPerformed
 
     private void btn_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedoresActionPerformed
@@ -214,7 +212,7 @@ ViewPaquetes mp = new ViewPaquetes();
     }//GEN-LAST:event_btn_proveedoresActionPerformed
 
     private void btn_vehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_vehiculosActionPerformed
-        // TODO add your handling code here:
+              vve.setVisible(true);
     }//GEN-LAST:event_btn_vehiculosActionPerformed
 
     private void btn_destinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_destinosActionPerformed

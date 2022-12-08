@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author jefry
  */
 public class ViewVehiculos extends javax.swing.JFrame {
-
+     MainVehiculos mh = new MainVehiculos();
     /**
      * Creates new form ViewVehiculos
      */
@@ -295,7 +295,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
         try {
-            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), txt_Cpersonas.getText(), chk_estado.isSelected());
+            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), chk_estado.isSelected());
             txt_matricula.setText("");
             txt_marca.setText("");
             txt_modelo.setText("");
@@ -309,14 +309,14 @@ public class ViewVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
-        mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), txt_Cpersonas.getText(),chk_estado.isSelected());
+        mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(),Integer.parseInt(txt_Cpersonas.getText()) ,chk_estado.isSelected());
         txt_matricula.setText("");
         txt_marca.setText("");
         txt_modelo.setText("");
         txt_Cpersonas.setText("");
         chk_estado.setSelected(false);
     }//GEN-LAST:event_btn_editarActionPerformed
-     MainVehiculos mh = new MainVehiculos();
+
     private void btn_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar1ActionPerformed
         String data[] = new String[7];
         data = mh.buscar(Integer.parseInt(txt_matricula.getText()));

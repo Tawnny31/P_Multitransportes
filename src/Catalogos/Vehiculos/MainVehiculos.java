@@ -6,8 +6,11 @@ import javax.swing.JOptionPane;
  *
  * @author jefry
  */
-public class MainVehiculos 
- public static  ArrayList<OCVehiculos> arVehiculos=new ArrayList(); 
+public class MainVehiculos{
+    public static  ArrayList<OCVehiculos> arVehiculos=new ArrayList(); 
+    public void agregar(int matricula, String marca, String modelo, int capacidadPersonas, boolean disponible){
+    
+     
  
   OCVehiculos veh=new OCVehiculos();
     
@@ -25,16 +28,20 @@ public class MainVehiculos
         arVehiculos.add(veh);
          
         JOptionPane.showMessageDialog(null, "Vehiculo agregado");
+    
+    
+    }
+
    
 
     public void mostrar() {
         int x;
         String s = "";
         for (x = 0; x < arVehiculos.size(); x++) {
-            s = s + arVehiculos.get(x).getMatricula() + " | Matricula: "
-                    + arVehiculos.get(x).getModelo() + " | Modelo: "
-                    +arVehiculos.get(x).getMarca()+ " | Marca: "
-                    +arVehiculos.get(x).getCapacidadPersonas() + " | Capacidad Personas: "
+            s = s + " | Matricula: " + arVehiculos.get(x).getMatricula() + " || Modelo: "
+                    + arVehiculos.get(x).getModelo() + "  | Marca:  "
+                    +arVehiculos.get(x).getMarca()+ " | Capacidad Personas: "
+                    +arVehiculos.get(x).getCapacidadPersonas() + " | Estado: "
                     +arVehiculos.get(x).getDisponible()+ "\n";
         }
         JOptionPane.showMessageDialog(null,
@@ -57,7 +64,7 @@ public class MainVehiculos
         return data;
     }
 
-    public void modificar(int matricula, String modelo, String marca, String capacidadPersonas, boolean disponible) {
+    public void modificar(int matricula, String modelo, String marca, int capacidadPersonas, boolean disponible) {
         for (int x = 0; x < arVehiculos.size(); x++) {
             if (matricula == arVehiculos.get(x).getMatricula()) {
 
