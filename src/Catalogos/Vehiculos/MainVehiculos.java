@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
  */
 public class MainVehiculos{
     public static  ArrayList<OCVehiculos> arVehiculos=new ArrayList(); 
-    public void agregar(int matricula, String marca, String modelo, int capacidadPersonas, boolean disponible){
+    public void agregar(int matricula, String marca, String modelo, int capacidadPersonas, String conductor, int seguro, boolean disponible){
     
      
  
@@ -18,6 +18,8 @@ public class MainVehiculos{
     veh.setModelo(modelo);
     veh.setMarca(marca);
     veh.setCapacidadPersonas(capacidadPersonas);
+    veh.setConductor(conductor);
+    veh.setSeguro(seguro);
     
     
                         if (disponible == true) {
@@ -42,6 +44,8 @@ public class MainVehiculos{
                     + arVehiculos.get(x).getModelo() + "  | Marca:  "
                     +arVehiculos.get(x).getMarca()+ " | Capacidad Personas: "
                     +arVehiculos.get(x).getCapacidadPersonas() + " | Estado: "
+                    +arVehiculos.get(x).getConductor() + " | Conductor: "
+                    +arVehiculos.get(x).getSeguro() + " | Seguro: "
                     +arVehiculos.get(x).getDisponible()+ "\n";
         }
         JOptionPane.showMessageDialog(null,
@@ -58,19 +62,23 @@ public class MainVehiculos{
                 data[1] = arVehiculos.get(x).getModelo();
                 data[2] = arVehiculos.get(x).getMarca();
                 data[3] = Integer.toString(arVehiculos.get(x).getCapacidadPersonas());
-                data[4] = Integer.toString(arVehiculos.get(x).getDisponible());
+                data[4] = arVehiculos.get(x).getConductor();
+                data[5] = Integer.toString(arVehiculos.get(x).getSeguro());
+                data[6] = Integer.toString(arVehiculos.get(x).getDisponible());
             }
         }
         return data;
     }
 
-    public void modificar(int matricula, String modelo, String marca, int capacidadPersonas, boolean disponible) {
+    public void modificar(int matricula, String modelo, String marca, int capacidadPersonas, String conductor, int seguro ,boolean disponible) {
         for (int x = 0; x < arVehiculos.size(); x++) {
             if (matricula == arVehiculos.get(x).getMatricula()) {
 
                 arVehiculos.get(x).setModelo(modelo);
                 arVehiculos.get(x).setMarca(marca);
                 arVehiculos.get(x).setCapacidadPersonas(capacidadPersonas);
+                arVehiculos.get(x).setConductor(conductor);
+                arVehiculos.get(x).setSeguro(seguro);
                 if (disponible == true) {
                     arVehiculos.get(x).setDisponible('A');
                 } else {
@@ -92,6 +100,8 @@ public class MainVehiculos{
     
     
     }
+
+   
     
 }
     

@@ -3,6 +3,7 @@ package Catalogos.Vehiculos;
 import Catalogos.personas;
 import Catalogos.personas;
 import Catalogos.personas;
+import Catalogos.Conductores.OCConductores;
 import javax.swing.JOptionPane;
 /**
  *
@@ -14,13 +15,18 @@ public class OCVehiculos {
    protected String marca;
    protected String modelo;
    protected int capacidadPersonas;
+   protected String conductor;
+   protected int seguro;
    protected char disponible;
+   
 
     public OCVehiculos() {
         this.matricula =0;
         this.marca ="";
         this.modelo = "";
         this.capacidadPersonas =0;
+        this.conductor="";
+        this.seguro=0;
         this.disponible = '\0';
     }
 
@@ -62,6 +68,22 @@ public class OCVehiculos {
 
     public void setDisponible(char disponible) {
         this.disponible = disponible;
+    }
+
+    public String getConductor() {
+        return conductor;
+    }
+
+    public void setConductor(String conductor) {
+        this.conductor = conductor;
+    }
+
+    public int getSeguro() {
+        return seguro;
+    }
+
+    public void setSeguro(int seguro) {
+        this.seguro = seguro;
     }
    
    

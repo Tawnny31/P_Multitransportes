@@ -1,5 +1,5 @@
 package Catalogos.Paquetes;
-package Catalogos.Proveedores;
+
 
 import Catalogos.Proveedores.MainProveedores;
 import Catalogos.Clientes.MainClientes;
