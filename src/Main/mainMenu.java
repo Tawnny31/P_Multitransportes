@@ -4,7 +4,7 @@ import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
 import Catalogos.Conductores.ViewConductores;
-import Catalogos.Paquetes.ViewPaquetes;
+import Catalogos.Destinos.ViewDestinos;
 import Facturacion.MainFacturas;
 import java.util.ArrayList;
 
@@ -194,7 +194,7 @@ public class mainMenu extends javax.swing.JFrame {
 ViewProveedores vp = new ViewProveedores();
 
     ViewClientes vc = new ViewClientes();
-    ViewPaquetes mp = new ViewPaquetes();
+    ViewDestinos mp = new ViewDestinos();
     ViewVehiculos vve = new ViewVehiculos();
     ViewConductores ss = new ViewConductores();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
@@ -224,9 +224,9 @@ ViewProveedores vp = new ViewProveedores();
     private void btn_facturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturacionActionPerformed
         mj.inicializarCliente();
     }//GEN-LAST:event_btn_facturacionActionPerformed
-
+Pepe p = new Pepe();
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
-        // TODO add your handling code here:
+      p.setVisible(true);
     }//GEN-LAST:event_btn_cajasActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
