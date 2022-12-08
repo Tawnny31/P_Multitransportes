@@ -7,6 +7,7 @@ package Main;
 import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
+import Catalogos.Conductores.ViewConductores;
 import Catalogos.Paquetes.ViewPaquetes;
 import java.util.ArrayList;
 
@@ -199,12 +200,13 @@ ViewProveedores vp = new ViewProveedores();
 ViewClientes vc= new ViewClientes();
 ViewPaquetes mp = new ViewPaquetes();
 ViewVehiculos vve = new ViewVehiculos();
+ViewConductores ss = new ViewConductores();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
           vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
 
     private void btn_conductores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conductores1ActionPerformed
-   
+   ss.setVisible(true);
     }//GEN-LAST:event_btn_conductores1ActionPerformed
 
     private void btn_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedoresActionPerformed
