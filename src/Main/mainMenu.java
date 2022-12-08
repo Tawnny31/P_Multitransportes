@@ -1,14 +1,11 @@
-
-
 package Main;
-
-
 
 import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Paquetes.ViewPaquetes;
+import Facturacion.MainFacturas;
 import java.util.ArrayList;
 
 /**
@@ -16,7 +13,6 @@ import java.util.ArrayList;
  * @author User
  */
 public class mainMenu extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form menu
@@ -197,16 +193,16 @@ public class mainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 ViewProveedores vp = new ViewProveedores();
 
-ViewClientes vc= new ViewClientes();
-ViewPaquetes mp = new ViewPaquetes();
-ViewVehiculos vve = new ViewVehiculos();
-ViewConductores ss = new ViewConductores();
+    ViewClientes vc = new ViewClientes();
+    ViewPaquetes mp = new ViewPaquetes();
+    ViewVehiculos vve = new ViewVehiculos();
+    ViewConductores ss = new ViewConductores();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
-          vc.setVisible(true);
+        vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
 
     private void btn_conductores1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_conductores1ActionPerformed
-   ss.setVisible(true);
+        ss.setVisible(true);
     }//GEN-LAST:event_btn_conductores1ActionPerformed
 
     private void btn_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedoresActionPerformed
@@ -214,19 +210,19 @@ ViewConductores ss = new ViewConductores();
     }//GEN-LAST:event_btn_proveedoresActionPerformed
 
     private void btn_vehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_vehiculosActionPerformed
-              vve.setVisible(true);
+        vve.setVisible(true);
     }//GEN-LAST:event_btn_vehiculosActionPerformed
 
     private void btn_destinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_destinosActionPerformed
-       mp.setVisible(true);
+        mp.setVisible(true);
     }//GEN-LAST:event_btn_destinosActionPerformed
 
     private void btn_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_consultasActionPerformed
 
+    }//GEN-LAST:event_btn_consultasActionPerformed
+    MainFacturas mj = new MainFacturas();
     private void btn_facturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturacionActionPerformed
-        // TODO add your handling code here:
+        mj.inicializarCliente();
     }//GEN-LAST:event_btn_facturacionActionPerformed
 
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
@@ -234,7 +230,7 @@ ViewConductores ss = new ViewConductores();
     }//GEN-LAST:event_btn_cajasActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-dispose();        
+        dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**
@@ -285,16 +281,5 @@ dispose();
     private javax.swing.JButton btn_vehiculos;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-
- 
-
-
-
-
-
-
-
-
-
 
 }
