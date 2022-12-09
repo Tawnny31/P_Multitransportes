@@ -357,7 +357,7 @@ public class ViewDestinos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+MainDestinos md=new MainDestinos();
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
 
     }//GEN-LAST:event_btn_editarActionPerformed
@@ -367,7 +367,8 @@ public class ViewDestinos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-
+        md.infoPred();
+        
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed

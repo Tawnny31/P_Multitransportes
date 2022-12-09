@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class MainConductores {
     public static ArrayList<OCConductores> arConductores=new ArrayList();    
        
-          public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
+        public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
       
         OCConductores con=new OCConductores();
         
