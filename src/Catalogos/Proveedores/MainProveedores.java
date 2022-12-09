@@ -1,6 +1,5 @@
 package Catalogos.Proveedores;
 
-
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -9,28 +8,29 @@ import javax.swing.JOptionPane;
  * @author Tawnny
  */
 public class MainProveedores {
-     public static  ArrayList<OCProveedores> arProveedores=new ArrayList();    
-       
-          public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
 
-         OCProveedores pro=new OCProveedores();
-        
+    public static ArrayList<OCProveedores> arProveedores = new ArrayList();
+
+    public void agregar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
+
+        OCProveedores pro = new OCProveedores();
+
         pro.setNombre(nombre);
         pro.setId(id);
         pro.setCiudad(ciudad);
         pro.setTelefono(telefono);
         pro.setDireccion(direccion);
         pro.setCorreo(correo);
-        
-                        if (estado == true) {
-                            pro.setEstado('A');
-                        } else {
-                              pro.setEstado('I');
-                        }     
+
+        if (estado == true) {
+            pro.setEstado('A');
+        } else {
+            pro.setEstado('I');
+        }
         arProveedores.add(pro);
-         
+
         JOptionPane.showMessageDialog(null, "Proveedor agregado");
-   }
+    }
 
     public void mostrar() {
         int x;
@@ -38,18 +38,17 @@ public class MainProveedores {
         for (x = 0; x < arProveedores.size(); x++) {
             s = s + arProveedores.get(x).getId() + " | Nombre: "
                     + arProveedores.get(x).getNombre() + " | Ciudad: "
-                    +arProveedores.get(x).getCiudad()+ " | Direccion: "
-                    +arProveedores.get(x).getDireccion() + " | Telefono: "
-                    +arProveedores.get(x).getTelefono() + " | Correo: "
-                    +arProveedores.get(x).getCorreo()+ " | Estado: "
-                    +arProveedores.get(x).getEstado()+ "\n";
+                    + arProveedores.get(x).getCiudad() + " | Direccion: "
+                    + arProveedores.get(x).getDireccion() + " | Telefono: "
+                    + arProveedores.get(x).getTelefono() + " | Correo: "
+                    + arProveedores.get(x).getCorreo() + " | Estado: "
+                    + arProveedores.get(x).getEstado() + "\n";
         }
         JOptionPane.showMessageDialog(null,
                 "**Lista de proveedores**\n" + s);
     }
-    
-    
- public String[] buscar(int id) {
+
+    public String[] buscar(int id) {
         int x;
         String data[] = new String[7];
         for (x = 0; x < arProveedores.size(); x++) {
@@ -83,9 +82,8 @@ public class MainProveedores {
             }
         }
     }
-    
-    
-   public boolean buscarid(int id) {
+
+    public boolean buscarid(int id) {
         boolean estado = false;
         for (int x = 0; x < arProveedores.size(); x++) {
             if (id == arProveedores.get(x).getId()) {
@@ -94,7 +92,23 @@ public class MainProveedores {
         }
         return estado;
     }
-    
-    
-    
+
+    public String[] llenarcombobox() {
+        int cantidad = 0;
+        String[] Nombres = new String[10];
+        String nombres = "";
+        for (int x = 0; x < arProveedores.size(); x++) {
+            if (arProveedores.get(x).getEstado() == 'A') {
+                Nombres[cantidad] = arProveedores.get(x).getNombre();
+                cantidad = cantidad + 1;
+//nombres = nombres + "//";
+            }
+        }
+        
+     //   Nombres = nombres.split("//");
+        
+        
+        return Nombres;
+    }
+
 }

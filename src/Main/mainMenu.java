@@ -48,7 +48,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_consultas.setBackground(new java.awt.Color(235, 235, 249));
         btn_consultas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_consultas.setText("Consultas");
+        btn_consultas.setText("Empleados");
         btn_consultas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_consultasActionPerformed(evt);

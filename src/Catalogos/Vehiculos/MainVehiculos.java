@@ -43,10 +43,9 @@ public class MainVehiculos{
             s = s + " | Matricula: " + arVehiculos.get(x).getMatricula() + " || Modelo: "
                     + arVehiculos.get(x).getModelo() + "  | Marca:  "
                     +arVehiculos.get(x).getMarca()+ " | Capacidad Personas: "
-                    +arVehiculos.get(x).getCapacidadPersonas() + " | Estado: "
-                    +arVehiculos.get(x).getConductor() + " | Conductor: "
-                    +arVehiculos.get(x).getSeguro() + " | Seguro: "
-                    +arVehiculos.get(x).getDisponible()+ "\n";
+                    +arVehiculos.get(x).getCapacidadPersonas() + " | Conductor: "
+                    +arVehiculos.get(x).getConductor() + " | Seguro: "
+                    +arVehiculos.get(x).getSeguro() + "\n";
         }
         JOptionPane.showMessageDialog(null,
                 "**Lista de vehiculos**\n" + s);
