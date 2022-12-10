@@ -343,12 +343,13 @@ public class ViewVehiculos extends javax.swing.JFrame {
             chk_estado.setSelected(false);
 
         } catch (NumberFormatException erro1) {
-            JOptionPane.showMessageDialog(null, "Error numerico\n");
+            JOptionPane.showMessageDialog(null, "Error \n");
         }
 
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        try {
         mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(),Integer.parseInt(txt_Cpersonas.getText()),String. valueOf(cbx_conductor.getSelectedItem()),Integer.parseInt(txt_seguro.getText()) ,chk_estado.isSelected());
         txt_matricula.setText("");
         txt_marca.setText("");
@@ -356,12 +357,16 @@ public class ViewVehiculos extends javax.swing.JFrame {
         txt_Cpersonas.setText("");
         txt_seguro.setText("");
         chk_estado.setSelected(false);
+        } catch (NumberFormatException erroreditar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
 
     private void btn_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar1ActionPerformed
+        try {
         String data[] = new String[7];
         data = mh.buscar(Integer.parseInt(txt_matricula.getText()));
-        try {
+        
             txt_marca.setText(data[1]);
             txt_modelo.setText(data[2]);
             txt_Cpersonas.setText(data[3]);
@@ -374,7 +379,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null,
-                "Error numerico\n");
+                "Error \n");
         }
     }//GEN-LAST:event_btn_buscar1ActionPerformed
 

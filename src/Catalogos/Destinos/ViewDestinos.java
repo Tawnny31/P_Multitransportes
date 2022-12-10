@@ -1,6 +1,7 @@
 package Catalogos.Destinos;
 
 import Catalogos.Proveedores.MainProveedores;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -434,14 +435,22 @@ MainProveedores mp = new MainProveedores();
     }//GEN-LAST:event_cbx_proveedoresActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_editarActionPerformed
-
+        try{
+            
+        } catch (NumberFormatException erroreditar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_agregarActionPerformed
+        try{
         md.agregar(String.valueOf(cbx_provincias.getSelectedItem()),
                 txt_tiempo.getText(), Integer.parseInt(txt_regularprecio.getText()),
                 txt_descri.getText(), chk_especial.isSelected(), Integer.parseInt(txt_precioespecial.getText()),
                 txt_dis.getText(), chk_estado.isSelected(), Integer.parseInt(String.valueOf(cbx_proveedores.getSelectedItem())), txt_paqueteespe.getText());
+        } catch (NumberFormatException erroragregar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_verActionPerformed
@@ -453,7 +462,11 @@ MainProveedores mp = new MainProveedores();
     }
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_buscarActionPerformed
-
+        try{
+            
+        } catch (NumberFormatException errorbuscar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }
 
     private void cbx_provinciasActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_cbx_provinciasActionPerformed

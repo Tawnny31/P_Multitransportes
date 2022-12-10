@@ -222,16 +222,28 @@ public class ViewFactura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        try {
 
+        } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
 
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        try {
 
+        } catch (NumberFormatException erroreditar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
 
     private void btn_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar1ActionPerformed
+        try {
 
+        } catch (NumberFormatException errorbuscar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }//GEN-LAST:event_btn_buscar1ActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed

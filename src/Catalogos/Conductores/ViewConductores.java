@@ -296,6 +296,7 @@ public class ViewConductores extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_idActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+        try{
         mco.modificar(Integer.parseInt(txt_id.getText()), txt_nombre.getText(), txt_ciudad.getText(), txt_direccion.getText(), txt_telefono.getText(), txt_correo.getText() ,chk_estado.isSelected());
         txt_id.setText("");
         txt_nombre.setText("");
@@ -304,6 +305,9 @@ public class ViewConductores extends javax.swing.JFrame {
         txt_ciudad.setText("");
         txt_correo.setText("");
         chk_estado.setSelected(false);
+        } catch (NumberFormatException erroreditar) {
+            JOptionPane.showMessageDialog(null, "Error \n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
 MainConductores mco = new MainConductores();
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
@@ -317,7 +321,7 @@ MainConductores mco = new MainConductores();
             txt_correo.setText("");
             chk_estado.setSelected(false);
         } catch (NumberFormatException erro1) {
-            JOptionPane.showMessageDialog(null, "Error numerico\n");
+            JOptionPane.showMessageDialog(null, "Error \n");
         }
     }//GEN-LAST:event_btn_agregarActionPerformed
 
@@ -330,9 +334,10 @@ mco.mostrar();
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-            String data[] = new String[7];
+        try {    
+        String data[] = new String[7];
         data = mco.buscar(Integer.parseInt(txt_id.getText()));
-        try {
+        
             txt_nombre.setText(data[1]);
             txt_ciudad.setText(data[2]);
             txt_direccion.setText(data[3]);
@@ -345,7 +350,7 @@ mco.mostrar();
             }
         } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null,
-                    "Error numerico\n");
+                    "Error \n");
         }
 
     }//GEN-LAST:event_btn_buscarActionPerformed
