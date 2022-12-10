@@ -47,14 +47,16 @@ public class MainClientes {
                 "**Lista de clientes**\n" + s);
     }
     
-    public boolean buscarid(int id) {
-        boolean estado = false;
+    public String[] llenarcombobox() {
+        int cantidad = 0;
+        String[] Nombres = new String[10];
         for (int x = 0; x < arCliente.size(); x++) {
-            if (id == arCliente.get(x).getId()) {
-                estado = true;
+            if (arCliente.get(x).getEstado() == 'A') {
+                Nombres[cantidad] = String. valueOf(arCliente.get(x).getId()) ;
+                cantidad = cantidad + 1;
             }
         }
-        return estado;
+        return Nombres;
     }
 
     public String[] buscar(int id) {

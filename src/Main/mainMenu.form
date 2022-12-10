@@ -27,7 +27,7 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btn_facturacion" min="-2" pref="156" max="-2" attributes="0"/>
+                  <Component id="btn_resevaciones" min="-2" pref="156" max="-2" attributes="0"/>
                   <Component id="btn_consultas" min="-2" pref="156" max="-2" attributes="0"/>
                   <Component id="btn_cajas" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
                   <Component id="btn_salir" min="-2" pref="156" max="-2" attributes="0"/>
@@ -43,7 +43,7 @@
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="btn_consultas" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btn_facturacion" min="-2" pref="45" max="-2" attributes="0"/>
+              <Component id="btn_resevaciones" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btn_cajas" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
@@ -68,7 +68,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_consultasActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn_facturacion">
+    <Component class="javax.swing.JButton" name="btn_resevaciones">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f9" green="eb" red="eb" type="rgb"/>
@@ -76,10 +76,10 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="12" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Facturaci&#xf3;n"/>
+        <Property name="text" type="java.lang.String" value="Reservaciones"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_facturacionActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_resevacionesActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn_cajas">

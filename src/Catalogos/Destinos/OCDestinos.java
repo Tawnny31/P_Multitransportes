@@ -6,40 +6,60 @@ package Catalogos.Destinos;
  * @author Tawnny Elizondo
  */
 public class OCDestinos {
+    private int id;
     private String provincia;
     private String destino;
     private String tiempo;
     private double precioRegular;
     private String descripcion;
-    private String pacEspecial;
+    private char pacEspecial;
     private double precioEspecial;
     private String distancia;
-    
+    private char estado;
+    private int proveedor;
+    private String DescriPaEs;
     public OCDestinos(){
+        this.id=0;
         this.provincia="";
         this.destino="";
         this.tiempo="";
         this.precioRegular=0.00;
         this.descripcion="";
-        this.pacEspecial="";
+        this.pacEspecial='\0';
+        this.estado='\0';
         this.precioEspecial=0.00;
         this.distancia="";
+        this.proveedor=0;
+        this.DescriPaEs="";
         
-    }
-
-    public OCDestinos(String provincia, String destino, String tiempo, double precioRegular, String descripcion, String pacEspecial, double precioEspecial, String distancia) {
-        this.provincia = provincia;
-        this.destino = destino;
-        this.tiempo = tiempo;
-        this.precioRegular = precioRegular;
-        this.descripcion = descripcion;
-        this.pacEspecial = pacEspecial;
-        this.precioEspecial = precioEspecial;
-        this.distancia = distancia;
     }
 
     public String getProvincia() {
         return provincia;
+    }
+
+    public char getEstado() {
+        return estado;
+    }
+
+    public String getDescriPaEs() {
+        return DescriPaEs;
+    }
+
+    public void setDescriPaEs(String DescriPaEs) {
+        this.DescriPaEs = DescriPaEs;
+    }
+
+    public int getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(int proveedor) {
+        this.proveedor = proveedor;
+    }
+
+    public void setEstado(char estado) {
+        this.estado = estado;
     }
 
     public void setProvincia(String provincia) {
@@ -48,6 +68,14 @@ public class OCDestinos {
 
     public String getDestino() {
         return destino;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDestino(String destino) {
@@ -78,11 +106,11 @@ public class OCDestinos {
         this.descripcion = descripcion;
     }
 
-    public String getPacEspecial() {
+    public char getPacEspecial() {
         return pacEspecial;
     }
 
-    public void setPacEspecial(String pacEspecial) {
+    public void setPacEspecial(char pacEspecial) {
         this.pacEspecial = pacEspecial;
     }
 

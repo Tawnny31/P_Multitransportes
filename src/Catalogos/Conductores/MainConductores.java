@@ -4,7 +4,6 @@
  */
 package Catalogos.Conductores;
 
-import Catalogos.Clientes.OCClientes;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -94,6 +93,19 @@ public class MainConductores {
                 }
             }
         }
+    }
+    
+        public String[] llenarcombobox() {
+        int cantidad = 0;
+        String[] Nombres = new String[10];
+        String nombres = "";
+        for (int x = 0; x < arConductores.size(); x++) {
+            if (arConductores.get(x).getEstado() == 'A') {
+                Nombres[cantidad] =String. valueOf( arConductores.get(x).getId());
+                cantidad = cantidad + 1;
+            }
+        }
+        return Nombres;
     }
 
 }

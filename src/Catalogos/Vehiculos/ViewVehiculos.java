@@ -4,6 +4,8 @@
  */
 package Catalogos.Vehiculos;
 
+import Catalogos.Conductores.MainConductores;
+import Catalogos.Vehiculos.MainVehiculos;
 import javax.swing.JOptionPane;
 
 /**
@@ -49,8 +51,8 @@ public class ViewVehiculos extends javax.swing.JFrame {
         btn_buscar1 = new javax.swing.JButton();
         btn_ver = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        txt_conductor = new javax.swing.JTextField();
         txt_seguro = new javax.swing.JTextField();
+        cbx_conductor = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -232,19 +234,18 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
-        txt_conductor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txt_conductor.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txt_conductor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_conductorActionPerformed(evt);
-            }
-        });
-
         txt_seguro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txt_seguro.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_seguro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_seguroActionPerformed(evt);
+            }
+        });
+
+        cbx_conductor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", " " }));
+        cbx_conductor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_conductorActionPerformed(evt);
             }
         });
 
@@ -266,8 +267,8 @@ public class ViewVehiculos extends javax.swing.JFrame {
                             .addComponent(txt_marca)
                             .addComponent(txt_modelo)
                             .addComponent(txt_Cpersonas)
-                            .addComponent(txt_conductor)
-                            .addComponent(txt_matricula, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(txt_matricula, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                            .addComponent(cbx_conductor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,9 +296,9 @@ public class ViewVehiculos extends javax.swing.JFrame {
                         .addComponent(txt_modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txt_Cpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
                         .addComponent(txt_seguro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(chk_estado))
@@ -333,13 +334,11 @@ public class ViewVehiculos extends javax.swing.JFrame {
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
         try {
-            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), txt_conductor.getText(),Integer.parseInt(txt_seguro.getText()), chk_estado.isSelected());
+            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), String. valueOf(cbx_conductor.getSelectedItem()), Integer.parseInt(txt_seguro.getText()), chk_estado.isSelected());
             txt_matricula.setText("");
             txt_marca.setText("");
             txt_modelo.setText("");
-            txt_modelo.setText("");
             txt_Cpersonas.setText("");
-            txt_conductor.setText("");
             txt_seguro.setText("");
             chk_estado.setSelected(false);
 
@@ -350,12 +349,11 @@ public class ViewVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
-        mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(),Integer.parseInt(txt_Cpersonas.getText()),txt_conductor.getText(),Integer.parseInt(txt_seguro.getText()) ,chk_estado.isSelected());
+        mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(),Integer.parseInt(txt_Cpersonas.getText()),String. valueOf(cbx_conductor.getSelectedItem()),Integer.parseInt(txt_seguro.getText()) ,chk_estado.isSelected());
         txt_matricula.setText("");
         txt_marca.setText("");
         txt_modelo.setText("");
         txt_Cpersonas.setText("");
-        txt_conductor.setText("");
         txt_seguro.setText("");
         chk_estado.setSelected(false);
     }//GEN-LAST:event_btn_editarActionPerformed
@@ -367,7 +365,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             txt_marca.setText(data[1]);
             txt_modelo.setText(data[2]);
             txt_Cpersonas.setText(data[3]);
-            txt_conductor.setText(data[4]);
+            cbx_conductor.setSelectedItem(data[4]);
             txt_seguro.setText(data[5]);
             if (Integer.parseInt(data[6]) == 65) {
                 chk_estado.setSelected(true);
@@ -388,13 +386,18 @@ public class ViewVehiculos extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void txt_conductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_conductorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_conductorActionPerformed
-
     private void txt_seguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_seguroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_seguroActionPerformed
+MainConductores maco = new MainConductores();
+    private void cbx_conductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_conductorActionPerformed
+                    cbx_conductor.removeAllItems ();
+ String[] Nombres =  maco.llenarcombobox();
+        for(int i = 0; i <  Nombres.length ; i++){
+            cbx_conductor.addItem( Nombres[i]);
+            System.out.print("end point destinos");
+        }
+    }//GEN-LAST:event_cbx_conductorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -437,6 +440,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_ver;
+    private javax.swing.JComboBox<String> cbx_conductor;
     private javax.swing.JCheckBox chk_estado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -448,7 +452,6 @@ public class ViewVehiculos extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField txt_Cpersonas;
-    private javax.swing.JTextField txt_conductor;
     private javax.swing.JTextField txt_marca;
     private javax.swing.JTextField txt_matricula;
     private javax.swing.JTextField txt_modelo;

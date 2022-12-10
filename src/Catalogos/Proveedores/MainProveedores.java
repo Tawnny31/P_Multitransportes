@@ -83,16 +83,6 @@ public class MainProveedores {
         }
     }
 
-    public boolean buscarid(int id) {
-        boolean estado = false;
-        for (int x = 0; x < arProveedores.size(); x++) {
-            if (id == arProveedores.get(x).getId()) {
-                estado = true;
-            }
-        }
-        return estado;
-    }
-
     public String[] llenarcombobox() {
         int cantidad = 0;
         String[] Nombres = new String[10];

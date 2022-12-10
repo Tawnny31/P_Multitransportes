@@ -40,7 +40,7 @@ public class MainVehiculos{
         int x;
         String s = "";
         for (x = 0; x < arVehiculos.size(); x++) {
-            s = s + " | Matricula: " + arVehiculos.get(x).getMatricula() + " || Modelo: "
+            s = s + " | Matricula: " + arVehiculos.get(x).getMatricula() + " | Modelo: "
                     + arVehiculos.get(x).getModelo() + "  | Marca:  "
                     +arVehiculos.get(x).getMarca()+ " | Capacidad Personas: "
                     +arVehiculos.get(x).getCapacidadPersonas() + " | Conductor: "

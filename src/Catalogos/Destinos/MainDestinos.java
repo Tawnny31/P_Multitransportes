@@ -12,9 +12,6 @@ import javax.swing.JOptionPane;
  */
 public class MainDestinos {
 
-    public static OCDestinos arDestinos[] = new OCDestinos[7];
-    OCDestinos con = new OCDestinos();
-
     String[] Chepe = {
         "Hacienda La Chimba",
         "30min",
@@ -82,7 +79,58 @@ public class MainDestinos {
         "68km"};
     
     
+ public static ArrayList<OCDestinos> arDestino = new ArrayList();
 
+    public void agregar(String provincia, String tiempo, double precioregular, 
+            String descripcion, boolean pacEspecial, double precioEspecial, 
+            String distancia, boolean estado, int conductor, String paqdes) {
 
+        OCDestinos des = new OCDestinos();
+        des.setId(10+1);
+        des.setProvincia(provincia);
+        des.setDestino(distancia);
+        des.setTiempo(tiempo);
+        des.setProveedor(conductor);
+        des.setPrecioRegular(precioregular);
+        des.setDistancia(distancia);
+        des.setDescripcion(descripcion);
+        des.setDescriPaEs(paqdes);
+        des.setPrecioEspecial(precioEspecial);
+        
+        if(pacEspecial == true){
+                    des.setPacEspecial('A');
+        }else{
+            des.setPacEspecial('I');
+        }
+
+      
+                        if (estado == true) {
+                            des.setEstado('A');
+                        } else {
+                              des.setEstado('I');
+                        }     
+        arDestino.add(des);
+
+        JOptionPane.showMessageDialog(null, "Destino agregado");
+    }
+    public void mostrar() {
+        String s = "";
+        for (int x = 0; x < arDestino.size(); x++) {
+            s = s +" | Distancia " + arDestino.get(x).getId()+
+                    " | Provincia " +  arDestino.get(x).getProvincia() +
+                    " | Destino " + arDestino.get(x).getDestino() +
+                    " | Tiempo Viaje " + arDestino.get(x).getProveedor()+
+                    " | Precio Regular " + arDestino.get(x).getPrecioRegular()+
+                    " | Estado " + arDestino.get(x).getEstado()+
+                    " | Descripcion " + arDestino.get(x).getDescripcion()+
+                    " | Paquete especial " + arDestino.get(x).getDescriPaEs()+
+                    " | Precio especial " + arDestino.get(x).getPrecioEspecial()+
+                    " | Estado paquete especial " + arDestino.get(x).getPacEspecial()+"\n";
+                    
+                    
+        }
+        JOptionPane.showMessageDialog(null,
+                "**Lista de destinos**\n" + s);
+    }
 
 }

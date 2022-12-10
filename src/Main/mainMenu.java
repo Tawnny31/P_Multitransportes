@@ -5,6 +5,7 @@ import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Destinos.ViewDestinos;
+import Facturacion.ViewFactura;
 import Facturacion.MainFacturas;
 import java.util.ArrayList;
 
@@ -34,7 +35,7 @@ public class mainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_consultas = new javax.swing.JButton();
-        btn_facturacion = new javax.swing.JButton();
+        btn_resevaciones = new javax.swing.JButton();
         btn_cajas = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btn_conductores1 = new javax.swing.JButton();
@@ -55,12 +56,12 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
 
-        btn_facturacion.setBackground(new java.awt.Color(235, 235, 249));
-        btn_facturacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_facturacion.setText("Facturación");
-        btn_facturacion.addActionListener(new java.awt.event.ActionListener() {
+        btn_resevaciones.setBackground(new java.awt.Color(235, 235, 249));
+        btn_resevaciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_resevaciones.setText("Reservaciones");
+        btn_resevaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_facturacionActionPerformed(evt);
+                btn_resevacionesActionPerformed(evt);
             }
         });
 
@@ -168,7 +169,7 @@ public class mainMenu extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_resevaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -181,7 +182,7 @@ public class mainMenu extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addComponent(btn_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_resevaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -197,6 +198,8 @@ ViewProveedores vp = new ViewProveedores();
     ViewDestinos mp = new ViewDestinos();
     ViewVehiculos vve = new ViewVehiculos();
     ViewConductores ss = new ViewConductores();
+        MainFacturas mj = new MainFacturas();
+        ViewFactura wf = new ViewFactura();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
         vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
@@ -220,10 +223,11 @@ ViewProveedores vp = new ViewProveedores();
     private void btn_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultasActionPerformed
 
     }//GEN-LAST:event_btn_consultasActionPerformed
-    MainFacturas mj = new MainFacturas();
-    private void btn_facturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturacionActionPerformed
-        mj.inicializarCliente();
-    }//GEN-LAST:event_btn_facturacionActionPerformed
+
+    private void btn_resevacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resevacionesActionPerformed
+        //mj.inicializarCliente();
+        wf.setVisible(true);
+    }//GEN-LAST:event_btn_resevacionesActionPerformed
 Pepe p = new Pepe();
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
       p.setVisible(true);
@@ -275,8 +279,8 @@ Pepe p = new Pepe();
     private javax.swing.JButton btn_conductores1;
     private javax.swing.JButton btn_consultas;
     private javax.swing.JButton btn_destinos;
-    private javax.swing.JButton btn_facturacion;
     private javax.swing.JButton btn_proveedores;
+    private javax.swing.JButton btn_resevaciones;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_vehiculos;
     private javax.swing.JPanel jPanel1;
