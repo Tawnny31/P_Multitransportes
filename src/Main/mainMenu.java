@@ -1,6 +1,5 @@
 package Main;
 
-
 import Cajas.MainCajas;
 import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
@@ -8,11 +7,13 @@ import Catalogos.Clientes.ViewClientes;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Destinos.ViewDestinos;
 import Catalogos.Empleados.ViewEmpleados;
-
-import Facturacion.MainFacturas;
 import Facturacion.ViewFactura;
-
-import java.util.ArrayList;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +30,16 @@ public class mainMenu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Sistema para Empresa Multitransportes Ride Me v1.0");
+
+        try {
+            sc = new Socket(HOST, PUERTO);
+            entrada = new DataInputStream(sc.getInputStream());
+            salida = new DataOutputStream(sc.getOutputStream());
+
+        } catch (IOException ex) {
+            System.out.print("¡Error durante el proceso de conexión, revise!");
+        }
+
     }
 
     /**
@@ -251,19 +262,41 @@ ViewProveedores vp = new ViewProveedores();
     }//GEN-LAST:event_btn_destinosActionPerformed
     ViewFactura mj = new ViewFactura();
     private void btn_facturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturacionActionPerformed
-mj.setVisible(true);
+        mj.setVisible(true);
     }//GEN-LAST:event_btn_facturacionActionPerformed
-MainCajas cm = new MainCajas();
+    MainCajas cm = new MainCajas();
+
+    private static final String HOST = "localhost";
+    private static final int PUERTO = 5000;
+    private Socket sc;
+    private DataInputStream entrada;
+    private DataOutputStream salida;
+    private String mensajeRecibido = "";
+    private String mensajeEnviar = "";
+
+
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
-    try {
-  cm.buscar(Integer.parseInt(txt_id.getText()));
-         } catch (NumberFormatException erro1) {
+        try {
+
+            try {
+
+                mensajeEnviar = cm.buscar(Integer.parseInt(txt_id.getText()));
+                System.out.print(mensajeEnviar);
+                salida.writeUTF(mensajeEnviar);
+                mensajeRecibido = entrada.readUTF();
+            } catch (IOException ex) {
+                Logger.getLogger(mainMenu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null, "Error\n");
         }
     }//GEN-LAST:event_btn_cajasActionPerformed
 
+
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         dispose();
+        Login lg = new Login();
+        lg.setVisible(true);
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_empleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_empleadosActionPerformed
@@ -324,4 +357,7 @@ MainCajas cm = new MainCajas();
     private javax.swing.JTextField txt_id;
     // End of variables declaration//GEN-END:variables
 
+    public void esperar() throws IOException {
+        salida.writeUTF(mensajeEnviar);
+    }
 }

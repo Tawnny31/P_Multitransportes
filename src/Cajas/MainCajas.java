@@ -21,6 +21,7 @@ public class MainCajas {
 
         double total = md.buscarpreciofinal(id2);
         return total;
+        
     }
 
     public String descripcion(int id, int id2, int id3) {
@@ -29,7 +30,6 @@ public class MainCajas {
         String destino = md.buscacaja(id2);
         String vehiculos = mv.buscacaja(id3);
         String descripcion = clientes + destino + vehiculos;
-        System.out.print(descripcion);
         return descripcion;
     }
 public   String[] data;
@@ -40,8 +40,6 @@ public   String[] data;
         if (mf.preguntar(id) == "N/A") {
 
         } else {
-            
-            System.out.print(data);
          
                     de = String.valueOf(total(Integer.parseInt(data[1]))) +"//"+  descripcion(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]));
        

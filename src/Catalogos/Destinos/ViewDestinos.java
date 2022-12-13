@@ -507,7 +507,6 @@ chk_especial.setSelected(true);
 
     private void cbx_provinciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_provinciasActionPerformed
           String provincia = (String) cbx_provincias.getSelectedItem();
-        System.out.print(provincia);
         switch (provincia) {
             case "San Jose":
                 txt_destino.setText(md.Chepe[0]);
@@ -599,7 +598,6 @@ chk_especial.setSelected(true);
         String[] Nombres = mp.llenarcombobox();
         for (int i = 0; i < Nombres.length; i++) {
             cbx_proveedores.addItem(Nombres[i]);
-            System.out.print("end point destinos");
         }
     }//GEN-LAST:event_btn_actuActionPerformed
 
