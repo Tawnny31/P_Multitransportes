@@ -229,7 +229,7 @@ ViewProveedores vp = new ViewProveedores();
         //mj.inicializarCliente();
         wf.setVisible(true);
     }//GEN-LAST:event_btn_resevacionesActionPerformed
-Pepe p = new Pepe();
+
 MainCajas mcajas = new MainCajas();
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
     //  p.setVisible(true);

@@ -23,6 +23,8 @@ MainVehiculos mv = new MainVehiculos();
   System.out.print(destino);
   String vehiculos = mv.buscacaja(id3);
     System.out.print(vehiculos);
+    
+    String descripcion = clientes + destino + vehiculos;
     }
 
 
