@@ -55,6 +55,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         btn_salir = new javax.swing.JButton();
         txt_seguro = new javax.swing.JTextField();
         cbx_conductor = new javax.swing.JComboBox<>();
+        btn_cbx = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -256,6 +257,13 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
+        btn_cbx.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cbx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cbxActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -275,7 +283,10 @@ public class ViewVehiculos extends javax.swing.JFrame {
                             .addComponent(txt_modelo)
                             .addComponent(txt_Cpersonas)
                             .addComponent(txt_matricula, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
-                            .addComponent(cbx_conductor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_cbx))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,8 +315,10 @@ public class ViewVehiculos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txt_Cpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_cbx))
+                        .addGap(7, 7, 7)
                         .addComponent(txt_seguro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(chk_estado))
@@ -317,7 +330,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
                     .addComponent(btn_buscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -348,7 +361,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             txt_Cpersonas.setText("");
             txt_seguro.setText("");
             chk_estado.setSelected(false);
-
+cbx_conductor.removeAllItems();
         } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null, "Error\n");
         }
@@ -403,12 +416,16 @@ public class ViewVehiculos extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_seguroActionPerformed
     MainConductores maco = new MainConductores();
     private void cbx_conductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_conductorActionPerformed
-        cbx_conductor.removeAllItems();
+
+    }//GEN-LAST:event_cbx_conductorActionPerformed
+
+    private void btn_cbxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cbxActionPerformed
+               cbx_conductor.removeAllItems();
         String[] Nombres = maco.llenarcombobox();
         for (int i = 0; i < Nombres.length; i++) {
             cbx_conductor.addItem(Nombres[i]);
         }
-    }//GEN-LAST:event_cbx_conductorActionPerformed
+    }//GEN-LAST:event_btn_cbxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,6 +465,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_buscar1;
+    private javax.swing.JButton btn_cbx;
     private javax.swing.JButton btn_editar;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_ver;

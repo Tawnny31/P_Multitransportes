@@ -1,9 +1,8 @@
 package Main;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.net.Socket;
+
+import Catalogos.Empleados.ViewEmpleados;
+import javax.swing.JOptionPane;
 
  /*
  * @author Tawnny
@@ -161,9 +160,16 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_passwordActionPerformed
        mainMenu  m = new mainMenu();
+ViewEmpleados me = new ViewEmpleados();
     private void btn_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entrarActionPerformed
-m.setVisible(true);
+
+String user = txt_usuario.getText();
+String pass = txt_password.getText();
+if(me.consultar(user, pass)==true){
+            m.setVisible(true);
 dispose();
+}
+                
     }//GEN-LAST:event_btn_entrarActionPerformed
 
     private void txt_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usuarioActionPerformed
@@ -192,37 +198,4 @@ dispose();
     private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
-
-
-
-  private static final String HOST = "localhost";
-    private static final int PUERTO = 5000;
-    private Socket sc;
-    private DataInputStream entrada;
-    private DataOutputStream salida;
-    private String mensajeRecibido = "";
-    private String mensajeEnviar = "";
-
-
-
-//   public void inicializarCliente() {
-//        try {
-//            Scanner lectura = new Scanner(System.in);
-//            sc = new Socket(HOST, PUERTO);
-//            entrada = new DataInputStream(sc.getInputStream());
-//            salida = new DataOutputStream(sc.getOutputStream());
-//            while (!mensajeEnviar.equals("SALIR")) {
-//                mensajeEnviar = JOptionPane.showInputDialog("Hola");
-//                salida.writeUTF(mensajeEnviar);
-//                mensajeRecibido = entrada.readUTF();
-//                System.out.print(mensajeRecibido);
-//
-//
-//
-//           }
-//        } catch (IOException ex) {
-//            System.out.print("¡Error durante el proceso de conexión, revise!");
-//        }
-//    }
-
 }

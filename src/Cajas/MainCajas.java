@@ -11,35 +11,43 @@ import javax.swing.JOptionPane;
  * @author Daniel
  */
 public class MainCajas {
+
     MainFacturas mf = new MainFacturas();
-MainDestinos md = new MainDestinos();
-MainClientes mc = new MainClientes();
-MainVehiculos mv = new MainVehiculos();
-    public void escoger(int id, int id2, int id3) {
+    MainDestinos md = new MainDestinos();
+    MainClientes mc = new MainClientes();
+    MainVehiculos mv = new MainVehiculos();
+
+    public double total(int id2) {
+
+        double total = md.buscarpreciofinal(id2);
+        return total;
+    }
+
+    public String descripcion(int id, int id2, int id3) {
 
         String clientes = mc.buscacaja(id);
-       System.out.print(clientes);
-       String destino = md.buscacaja(1);
-  System.out.print(destino);
-  String vehiculos = mv.buscacaja(id3);
-    System.out.print(vehiculos);
-    
-    String descripcion = clientes + destino + vehiculos;
+        String destino = md.buscacaja(id2);
+        String vehiculos = mv.buscacaja(id3);
+        String descripcion = clientes + destino + vehiculos;
+        System.out.print(descripcion);
+        return descripcion;
     }
-
-
-
-    public void buscar() {
-        int id =Integer.parseInt( JOptionPane.showInputDialog("Escribe el ID de la reservacion"));
+public   String[] data;
+   
+    public String buscar(int id) {
+       data = mf.buscacaja(id).split("//");
+       String de ="";
         if (mf.preguntar(id) == "N/A") {
-            
-        }else{
-         String[] data =  mf.buscacaja(id).split("//");
-         System.out.print(data);
-            escoger(Integer.parseInt(data[0]), Integer.parseInt(data[1]),Integer.parseInt(data[2])
-            );
-                        
-        }
 
+        } else {
+            
+            System.out.print(data);
+         
+                    de = String.valueOf(total(Integer.parseInt(data[1]))) +"//"+  descripcion(Integer.parseInt(data[0]), Integer.parseInt(data[1]), Integer.parseInt(data[2]));
+       
     }
+ return de;
+    }
+ 
+    
 }

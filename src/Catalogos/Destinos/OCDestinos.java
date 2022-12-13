@@ -1,11 +1,10 @@
-
 package Catalogos.Destinos;
-
 /**
  *
  * @author Tawnny Elizondo
  */
 public class OCDestinos {
+    
     private int id;
     private String provincia;
     private String destino;
@@ -19,6 +18,7 @@ public class OCDestinos {
     private int proveedor;
     private String DescriPaEs;
     private double totalfinal;
+    
     public OCDestinos(){
         this.id=0;
         this.provincia="";
@@ -33,7 +33,6 @@ public class OCDestinos {
         this.proveedor=0;
         this.DescriPaEs="";
         this.totalfinal=0.00;
-        
     }
 
     public double getTotalfinal() {

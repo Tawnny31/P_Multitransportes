@@ -1,14 +1,19 @@
 package Main;
 
+
 import Cajas.MainCajas;
 import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
 import Catalogos.Conductores.ViewConductores;
 import Catalogos.Destinos.ViewDestinos;
-import Facturacion.ViewFactura;
+import Catalogos.Empleados.ViewEmpleados;
+
 import Facturacion.MainFacturas;
+import Facturacion.ViewFactura;
+
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,8 +40,7 @@ public class mainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_consultas = new javax.swing.JButton();
-        btn_resevaciones = new javax.swing.JButton();
+        btn_facturacion = new javax.swing.JButton();
         btn_cajas = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btn_conductores1 = new javax.swing.JButton();
@@ -45,29 +49,24 @@ public class mainMenu extends javax.swing.JFrame {
         btn_destinos = new javax.swing.JButton();
         btn_clientes = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
+        btn_empleados = new javax.swing.JButton();
+        txt_id = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btn_consultas.setBackground(new java.awt.Color(235, 235, 249));
-        btn_consultas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_consultas.setText("Empleados");
-        btn_consultas.addActionListener(new java.awt.event.ActionListener() {
+        btn_facturacion.setBackground(new java.awt.Color(235, 235, 249));
+        btn_facturacion.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_facturacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/money-cheque-editar.png"))); // NOI18N
+        btn_facturacion.setText("Facturación");
+        btn_facturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_consultasActionPerformed(evt);
-            }
-        });
-
-        btn_resevaciones.setBackground(new java.awt.Color(235, 235, 249));
-        btn_resevaciones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_resevaciones.setText("Reservaciones");
-        btn_resevaciones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_resevacionesActionPerformed(evt);
+                btn_facturacionActionPerformed(evt);
             }
         });
 
         btn_cajas.setBackground(new java.awt.Color(235, 235, 249));
         btn_cajas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_cajas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/monedas.png"))); // NOI18N
         btn_cajas.setText("Cajas");
         btn_cajas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +78,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_conductores1.setBackground(new java.awt.Color(235, 235, 249));
         btn_conductores1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_conductores1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/volante.png"))); // NOI18N
         btn_conductores1.setText("Catalogo Conductores");
         btn_conductores1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,6 +88,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_proveedores.setBackground(new java.awt.Color(235, 235, 249));
         btn_proveedores.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/lado-del-camion.png"))); // NOI18N
         btn_proveedores.setText("Catalogo Proveedores");
         btn_proveedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +98,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_vehiculos.setBackground(new java.awt.Color(235, 235, 249));
         btn_vehiculos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_vehiculos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/coche-autobus.png"))); // NOI18N
         btn_vehiculos.setText("Catalogo Vehiculos");
         btn_vehiculos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +108,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_destinos.setBackground(new java.awt.Color(235, 235, 249));
         btn_destinos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_destinos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/mundo.png"))); // NOI18N
         btn_destinos.setText("Catalogo Destinos");
         btn_destinos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +118,7 @@ public class mainMenu extends javax.swing.JFrame {
 
         btn_clientes.setBackground(new java.awt.Color(235, 235, 249));
         btn_clientes.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_clientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuarios-alt.png"))); // NOI18N
         btn_clientes.setText("Catalogo Clientes");
         btn_clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -127,14 +131,19 @@ public class mainMenu extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_conductores1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_clientes, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_destinos, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_vehiculos, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_proveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_conductores1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_vehiculos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_destinos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,33 +171,54 @@ public class mainMenu extends javax.swing.JFrame {
             }
         });
 
+        btn_empleados.setBackground(new java.awt.Color(235, 235, 249));
+        btn_empleados.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_empleados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario.png"))); // NOI18N
+        btn_empleados.setText("Catalogo Empleados");
+        btn_empleados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_empleadosActionPerformed(evt);
+            }
+        });
+
+        txt_id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_idActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_resevaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_empleados)
+                    .addComponent(btn_facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(btn_consultas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_empleados, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_resevaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_facturacion, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cajas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,8 +229,7 @@ ViewProveedores vp = new ViewProveedores();
     ViewDestinos mp = new ViewDestinos();
     ViewVehiculos vve = new ViewVehiculos();
     ViewConductores ss = new ViewConductores();
-        MainFacturas mj = new MainFacturas();
-        ViewFactura wf = new ViewFactura();
+    ViewEmpleados ve = new ViewEmpleados();
     private void btn_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_clientesActionPerformed
         vc.setVisible(true);
     }//GEN-LAST:event_btn_clientesActionPerformed
@@ -220,25 +249,30 @@ ViewProveedores vp = new ViewProveedores();
     private void btn_destinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_destinosActionPerformed
         mp.setVisible(true);
     }//GEN-LAST:event_btn_destinosActionPerformed
-
-    private void btn_consultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_consultasActionPerformed
-
-    }//GEN-LAST:event_btn_consultasActionPerformed
-
-    private void btn_resevacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resevacionesActionPerformed
-        //mj.inicializarCliente();
-        wf.setVisible(true);
-    }//GEN-LAST:event_btn_resevacionesActionPerformed
-
-MainCajas mcajas = new MainCajas();
+    ViewFactura mj = new ViewFactura();
+    private void btn_facturacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_facturacionActionPerformed
+mj.setVisible(true);
+    }//GEN-LAST:event_btn_facturacionActionPerformed
+MainCajas cm = new MainCajas();
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
-    //  p.setVisible(true);
-      mcajas.buscar();
+    try {
+  cm.buscar(Integer.parseInt(txt_id.getText()));
+         } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error\n");
+        }
     }//GEN-LAST:event_btn_cajasActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_empleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_empleadosActionPerformed
+        ve.setVisible(true);
+    }//GEN-LAST:event_btn_empleadosActionPerformed
+
+    private void txt_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_idActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,13 +314,14 @@ MainCajas mcajas = new MainCajas();
     private javax.swing.JButton btn_cajas;
     private javax.swing.JButton btn_clientes;
     private javax.swing.JButton btn_conductores1;
-    private javax.swing.JButton btn_consultas;
     private javax.swing.JButton btn_destinos;
+    private javax.swing.JButton btn_empleados;
+    private javax.swing.JButton btn_facturacion;
     private javax.swing.JButton btn_proveedores;
-    private javax.swing.JButton btn_resevaciones;
     private javax.swing.JButton btn_salir;
     private javax.swing.JButton btn_vehiculos;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txt_id;
     // End of variables declaration//GEN-END:variables
 
 }
