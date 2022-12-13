@@ -2,23 +2,35 @@
 package Facturacion;
 
 public class OCFacturas  {// falta catalogo servicios
-    private String cliente;
+    private int cliente;
     private int id;
-    private String destino;
+    private int destino;
+    private int vehiculo;
+    private String fecha;
     
     public OCFacturas(){
         this.id=0;
-        this.cliente="";
-        this.destino="";
+        this.cliente=0;
+        this.destino=0;
+        this.vehiculo=0;
+        this.fecha="";
         
         
     }
 
-    public String getCliente() {
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getCliente() {
         return cliente;
     }
 
-    public void setCliente(String cliente) {
+    public void setCliente(int cliente) {
         this.cliente = cliente;
     }
 
@@ -30,11 +42,21 @@ public class OCFacturas  {// falta catalogo servicios
         this.id = id;
     }
 
-    public String getDestino() {
+    public int getDestino() {
         return destino;
     }
 
-    public void setDestino(String destino) {
+    public void setDestino(int destino) {
         this.destino = destino;
     }
+
+    public int getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(int vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+  
 }

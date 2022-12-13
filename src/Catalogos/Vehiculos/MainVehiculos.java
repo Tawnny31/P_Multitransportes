@@ -68,6 +68,22 @@ public class MainVehiculos{
         }
         return data;
     }
+      public String buscacaja(int id) {
+        int x;
+        String data ="";
+        for (x = 0; x < arVehiculos.size(); x++) {
+            if (id == arVehiculos.get(x).getMatricula()) {
+                data ="\nVEHICULO\nMatricula "+ String.valueOf(arVehiculos.get(x).getMatricula())+ "\nMarca "+
+                         String.valueOf(arVehiculos.get(x).getMarca())+"\nModelo "+
+                 String.valueOf(arVehiculos.get(x).getModelo())+"\nCapacidad "+
+               String.valueOf(arVehiculos.get(x).getCapacidadPersonas())+"\nId Conductor "+
+                String.valueOf(arVehiculos.get(x).getConductor()) + "\nSeguro #" +
+                String.valueOf(arVehiculos.get(x).getSeguro())+"\n";
+                        
+            }
+        }
+        return data;
+    }
 
     public void modificar(int matricula, String modelo, String marca, int capacidadPersonas, String conductor, int seguro ,boolean disponible) {
         for (int x = 0; x < arVehiculos.size(); x++) {
@@ -87,21 +103,21 @@ public class MainVehiculos{
         }
         }
     
-    
-    public String validarestado(int matricula ){
-        String data ="Hola Mundo";
+      public String[] llenarcombobox() {
+        int cantidad = 0;
+        String[] Nombres = new String[10];
         for (int x = 0; x < arVehiculos.size(); x++) {
-            if (matricula == arVehiculos.get(x).getMatricula()) {
-                data= Integer.toString(arVehiculos.get(x).getDisponible());
+            if (arVehiculos.get(x).getDisponible() == 'A') {
+                Nombres[cantidad] = String. valueOf(arVehiculos.get(x).getMatricula()) ;
+                cantidad = cantidad + 1;
             }
         }
-        return data;
-    
-    
+        return Nombres;
+    }
     }
 
    
     
-}
+
     
 

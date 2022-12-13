@@ -77,18 +77,17 @@ public class MainDestinos {
         "Incluye pozas celestes, catarata y almuerzo.",
         "12000",
         "68km"};
-    
-    
- public static ArrayList<OCDestinos> arDestino = new ArrayList();
 
-    public void agregar(String provincia, String tiempo, double precioregular, 
-            String descripcion, boolean pacEspecial, double precioEspecial, 
-            String distancia, boolean estado, int conductor, String paqdes) {
+    public static ArrayList<OCDestinos> arDestino = new ArrayList();
+
+    public void agregar(int id, String provincia, String tiempo, double precioregular,
+            String descripcion, boolean pacEspecial, double precioEspecial,
+            String distancia, boolean estado, int conductor, String paqdes,String destino) {
 
         OCDestinos des = new OCDestinos();
-        des.setId(10+1);
+        des.setId(id);
         des.setProvincia(provincia);
-        des.setDestino(distancia);
+        des.setDestino(destino);
         des.setTiempo(tiempo);
         des.setProveedor(conductor);
         des.setPrecioRegular(precioregular);
@@ -96,41 +95,94 @@ public class MainDestinos {
         des.setDescripcion(descripcion);
         des.setDescriPaEs(paqdes);
         des.setPrecioEspecial(precioEspecial);
-        
-        if(pacEspecial == true){
-                    des.setPacEspecial('A');
-        }else{
+
+        if (pacEspecial == true) {
+            des.setPacEspecial('A');
+            des.setTotalfinal(precioEspecial);
+        } else {
             des.setPacEspecial('I');
+            
         }
 
-      
-                        if (estado == true) {
-                            des.setEstado('A');
-                        } else {
-                              des.setEstado('I');
-                        }     
+        if (estado == true) {
+            des.setEstado('A');
+        } else {
+            des.setEstado('I');
+        }
         arDestino.add(des);
 
         JOptionPane.showMessageDialog(null, "Destino agregado");
     }
+    
+
     public void mostrar() {
         String s = "";
         for (int x = 0; x < arDestino.size(); x++) {
-            s = s +" | Distancia " + arDestino.get(x).getId()+
-                    " | Provincia " +  arDestino.get(x).getProvincia() +
-                    " | Destino " + arDestino.get(x).getDestino() +
-                    " | Tiempo Viaje " + arDestino.get(x).getProveedor()+
-                    " | Precio Regular " + arDestino.get(x).getPrecioRegular()+
-                    " | Estado " + arDestino.get(x).getEstado()+
-                    " | Descripcion " + arDestino.get(x).getDescripcion()+
-                    " | Paquete especial " + arDestino.get(x).getDescriPaEs()+
-                    " | Precio especial " + arDestino.get(x).getPrecioEspecial()+
-                    " | Estado paquete especial " + arDestino.get(x).getPacEspecial()+"\n";
-                    
-                    
+            s = s + " | Id " + arDestino.get(x).getId()
+                    + " | Distancia" + arDestino.get(x).getDistancia()
+                    + " | Provincia " + arDestino.get(x).getProvincia()
+                    + " | Destino " + arDestino.get(x).getDestino()
+                    + " | Tiempo Viaje " + arDestino.get(x).getTiempo()
+                    + " | Precio Regular " + arDestino.get(x).getPrecioRegular()
+                    + " | Estado " + arDestino.get(x).getEstado()
+                    + " | Descripcion " + arDestino.get(x).getDescripcion()
+                    + " | Paquete especial " + arDestino.get(x).getDescriPaEs()
+                    + " | Precio especial " + arDestino.get(x).getPrecioEspecial()
+                    + " | Estado paquete especial " + arDestino.get(x).getPacEspecial() + "\n";
+
         }
         JOptionPane.showMessageDialog(null,
                 "**Lista de destinos**\n" + s);
     }
 
+
+    public String[] llenarcombobox() {
+        int cantidad = 0;
+        String[] Nombres = new String[10];
+        for (int x = 0; x < arDestino.size(); x++) {
+            if (arDestino.get(x).getEstado() == 'A') {
+                Nombres[cantidad] = String.valueOf(arDestino.get(x).getId());
+                cantidad = cantidad + 1;
+            }
+        }
+        return Nombres;
+    }
+  public String[] buscar(int id) {
+        int x;
+        String data[] = new String[11];
+        for (x = 0; x < arDestino.size(); x++) {
+            if (id == arDestino.get(x).getId()) {
+                data[0] =arDestino.get(x).getProvincia();
+             data[1]   =arDestino.get(x).getDestino();
+             data[2]   =arDestino.get(x).getTiempo();
+            data[3]    =String.valueOf(arDestino.get(x).getProveedor());
+            data[4]   =String.valueOf(arDestino.get(x).getPrecioRegular());
+           data[5]     =arDestino.get(x).getDistancia();
+           data[6]     =arDestino.get(x).getDescripcion();
+          data[7]      =arDestino.get(x).getDescriPaEs();
+          data[8]    =  String.valueOf(arDestino.get(x).getPrecioEspecial());
+          data[9]    =  String.valueOf(arDestino.get(x).getEstado());
+           data[10]    =  String.valueOf(arDestino.get(x).getPacEspecial());
+            }
+        }
+        return data;
+    }
+  
+          public String buscacaja(int id) {
+        int x;
+        String data ="";
+        for (x = 0; x < arDestino.size(); x++) {
+            if (id == arDestino.get(x).getId()) {
+                data = "DESTINO\nProvincia "+String.valueOf(arDestino.get(x).getProvincia())+ "\nDestino "+
+                 arDestino.get(x).getDestino()+"\nDistancia "+
+               arDestino.get(x).getDistancia()+"\n Tiempo "+
+                arDestino.get(x).getTiempo() + "\nDescripcion " +
+                arDestino.get(x).getDescripcion()+"\n";
+                        
+            }
+        }
+        return data;
+    }
+  
+  
 }

@@ -1,5 +1,6 @@
 package Main;
 
+import Cajas.MainCajas;
 import Catalogos.Proveedores.ViewProveedores;
 import Catalogos.Vehiculos.ViewVehiculos;
 import Catalogos.Clientes.ViewClientes;
@@ -229,8 +230,10 @@ ViewProveedores vp = new ViewProveedores();
         wf.setVisible(true);
     }//GEN-LAST:event_btn_resevacionesActionPerformed
 Pepe p = new Pepe();
+MainCajas mcajas = new MainCajas();
     private void btn_cajasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cajasActionPerformed
-      p.setVisible(true);
+    //  p.setVisible(true);
+      mcajas.buscar();
     }//GEN-LAST:event_btn_cajasActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed

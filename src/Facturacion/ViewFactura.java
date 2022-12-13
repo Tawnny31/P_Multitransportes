@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Facturacion;
 
 import Catalogos.Clientes.MainClientes;
-import Catalogos.Conductores.MainConductores;
+import Catalogos.Destinos.MainDestinos;
 import Catalogos.Vehiculos.MainVehiculos;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author jefry
  */
 public class ViewFactura extends javax.swing.JFrame {
-     MainVehiculos mh = new MainVehiculos();
+
     /**
      * Creates new form ViewVehiculos
      */
@@ -38,6 +35,8 @@ public class ViewFactura extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         btn_agregar = new javax.swing.JButton();
         btn_editar = new javax.swing.JButton();
         btn_buscar1 = new javax.swing.JButton();
@@ -45,6 +44,9 @@ public class ViewFactura extends javax.swing.JFrame {
         btn_salir = new javax.swing.JButton();
         cbx_cliente = new javax.swing.JComboBox<>();
         cbx_destinos = new javax.swing.JComboBox<>();
+        cbx_transporte = new javax.swing.JComboBox<>();
+        txt_id = new javax.swing.JTextField();
+        btn_actucombo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +85,14 @@ public class ViewFactura extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Destino");
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Transporte");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Identificacion");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,6 +100,8 @@ public class ViewFactura extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel9)
                     .addComponent(jLabel8)
                     .addComponent(jLabel1))
                 .addGap(0, 79, Short.MAX_VALUE))
@@ -101,7 +113,11 @@ public class ViewFactura extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         btn_agregar.setBackground(new java.awt.Color(235, 235, 249));
@@ -169,31 +185,49 @@ public class ViewFactura extends javax.swing.JFrame {
             }
         });
 
+        cbx_transporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", " " }));
+        cbx_transporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_transporteActionPerformed(evt);
+            }
+        });
+
+        btn_actucombo.setBackground(new java.awt.Color(0, 0, 255));
+        btn_actucombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_actucomboActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(14, 14, 14)
                         .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_buscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbx_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_destinos, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbx_cliente, 0, 226, Short.MAX_VALUE)
+                            .addComponent(cbx_destinos, 0, 226, Short.MAX_VALUE)
+                            .addComponent(cbx_transporte, 0, 226, Short.MAX_VALUE)
+                            .addComponent(txt_id))
+                        .addGap(55, 55, 55)
+                        .addComponent(btn_actucombo)))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -202,13 +236,19 @@ public class ViewFactura extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(cbx_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cbx_cliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_actucombo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbx_destinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cbx_destinos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(cbx_transporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,9 +260,18 @@ public class ViewFactura extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+MainFacturas mf = new MainFacturas();
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
-
+        try {
+            Date date = new Date();
+            mf.agregar(Integer.parseInt(txt_id.getText()), Integer.parseInt(String.valueOf(cbx_cliente.getSelectedItem())), Integer.parseInt(String.valueOf(cbx_destinos.getSelectedItem())), Integer.parseInt(String.valueOf(cbx_transporte.getSelectedItem())), String.valueOf(date));
+            txt_id.setText("");
+            cbx_cliente.removeAllItems();
+            cbx_transporte.removeAllItems();
+            cbx_destinos.removeAllItems();
+        } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
 
     }//GEN-LAST:event_btn_agregarActionPerformed
 
@@ -231,59 +280,67 @@ public class ViewFactura extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_editarActionPerformed
 
     private void btn_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar1ActionPerformed
+        try {
+            String data[] = new String[4];
 
+            data = md.buscar(Integer.parseInt(txt_id.getText()));
+            Object obj1 = data[0];
+            Object obj2 = data[1];
+            Object obj3 = data[2];
+
+            cbx_cliente.setSelectedItem(obj1);
+            cbx_destinos.setSelectedItem(obj2);
+            cbx_transporte.setSelectedItem(obj3);
+            txt_id.setText(data[3]);
+
+        } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null,
+                    "Error\n");
+        }
     }//GEN-LAST:event_btn_buscar1ActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-        mh.mostrar();
+mf.mostrar();
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         dispose();
     }//GEN-LAST:event_btn_salirActionPerformed
-MainClientes maco = new MainClientes();
+    MainClientes maco = new MainClientes();
     private void cbx_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_clienteActionPerformed
-                    cbx_cliente.removeAllItems ();
- String[] Nombres =  maco.llenarcombobox();
-        for(int i = 0; i <  Nombres.length ; i++){
-            cbx_cliente.addItem( Nombres[i]);
-            System.out.print("end point destinos");
-        }
+
     }//GEN-LAST:event_cbx_clienteActionPerformed
-
+    MainDestinos md = new MainDestinos();
     private void cbx_destinosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_destinosActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cbx_destinosActionPerformed
+    MainVehiculos mv = new MainVehiculos();
+    private void cbx_transporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_transporteActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewFactura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    }//GEN-LAST:event_cbx_transporteActionPerformed
+
+    private void btn_actucomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actucomboActionPerformed
+
+        cbx_cliente.removeAllItems();
+        String[] clientes = maco.llenarcombobox().split("//");
+        for (int i = 0; i < clientes.length; i++) {
+            cbx_cliente.addItem(clientes[i]);
         }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+        cbx_transporte.removeAllItems();
+        String[] vehiculos = mv.llenarcombobox();
+        for (int i = 0; i < vehiculos.length; i++) {
+            cbx_transporte.addItem(vehiculos[i]);
+        }
+
+        cbx_destinos.removeAllItems();
+        String[] Nombres = md.llenarcombobox();
+        for (int i = 0; i < Nombres.length; i++) {
+            cbx_destinos.addItem(Nombres[i]);
+        }
+    }//GEN-LAST:event_btn_actucomboActionPerformed
+
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ViewFactura().setVisible(true);
@@ -292,6 +349,7 @@ MainClientes maco = new MainClientes();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_actucombo;
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_buscar1;
     private javax.swing.JButton btn_editar;
@@ -299,10 +357,14 @@ MainClientes maco = new MainClientes();
     private javax.swing.JButton btn_ver;
     private javax.swing.JComboBox<String> cbx_cliente;
     private javax.swing.JComboBox<String> cbx_destinos;
+    private javax.swing.JComboBox<String> cbx_transporte;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField txt_id;
     // End of variables declaration//GEN-END:variables
 }

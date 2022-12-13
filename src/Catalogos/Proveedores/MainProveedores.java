@@ -64,6 +64,7 @@ public class MainProveedores {
         }
         return data;
     }
+    
 
     public void modificar(int id, String nombre, String ciudad, String direccion, String telefono, String correo, boolean estado) {
         for (int x = 0; x < arProveedores.size(); x++) {
@@ -86,18 +87,12 @@ public class MainProveedores {
     public String[] llenarcombobox() {
         int cantidad = 0;
         String[] Nombres = new String[10];
-        String nombres = "";
         for (int x = 0; x < arProveedores.size(); x++) {
             if (arProveedores.get(x).getEstado() == 'A') {
-                Nombres[cantidad] = arProveedores.get(x).getNombre();
+                Nombres[cantidad] = String.valueOf(arProveedores.get(x).getId());
                 cantidad = cantidad + 1;
-//nombres = nombres + "//";
             }
         }
-        
-     //   Nombres = nombres.split("//");
-        
-        
         return Nombres;
     }
 

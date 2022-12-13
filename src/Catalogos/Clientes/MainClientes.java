@@ -47,13 +47,11 @@ public class MainClientes {
                 "**Lista de clientes**\n" + s);
     }
     
-    public String[] llenarcombobox() {
-        int cantidad = 0;
-        String[] Nombres = new String[10];
+    public String llenarcombobox() {
+        String Nombres="";
         for (int x = 0; x < arCliente.size(); x++) {
             if (arCliente.get(x).getEstado() == 'A') {
-                Nombres[cantidad] = String. valueOf(arCliente.get(x).getId()) ;
-                cantidad = cantidad + 1;
+                Nombres = Nombres +String.valueOf(arCliente.get(x).getId()) +"//" ;
             }
         }
         return Nombres;
@@ -71,6 +69,21 @@ public class MainClientes {
                 data[4] = arCliente.get(x).getTelefono();
                 data[5] = arCliente.get(x).getCorreo();
                 data[6] = Integer.toString(arCliente.get(x).getEstado());
+            }
+        }
+        return data;
+    }
+       public String buscacaja(int id) {
+        int x;
+        String data= "";
+        for (x = 0; x < arCliente.size(); x++) {
+            if (id == arCliente.get(x).getId()) {
+                data= "CLIENTE\nId "+Integer.toString(arCliente.get(x).getId()) + "\nNombre "+
+                arCliente.get(x).getNombre() + "\nCiudad "+
+                arCliente.get(x).getCiudad() + "\nDireccion "+
+                arCliente.get(x).getDireccion() + "\nTelefono "+
+                arCliente.get(x).getTelefono()  + "\nCorreo "+
+                arCliente.get(x).getCorreo() + "\n";
             }
         }
         return data;

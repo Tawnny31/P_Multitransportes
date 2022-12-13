@@ -50,6 +50,7 @@ public class ViewClientes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         txt_id.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_id.setText("208290938");
         txt_id.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,19 +59,29 @@ public class ViewClientes extends javax.swing.JFrame {
         });
 
         txt_nombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_nombre.setText("Daniel R");
         txt_nombre.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         txt_ciudad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_ciudad.setText("Alajuela");
         txt_ciudad.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         txt_direccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_direccion.setText("Carrizal");
         txt_direccion.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         txt_telefono.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_telefono.setText("64395671");
         txt_telefono.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         txt_correo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_correo.setText("rivera200656@gmail.com");
         txt_correo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txt_correo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_correoActionPerformed(evt);
+            }
+        });
 
         chk_estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chk_estado.setText("Estado");
@@ -292,6 +303,7 @@ public class ViewClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_txt_idActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+       try{
         mc.modificar(Integer.parseInt(txt_id.getText()), txt_nombre.getText(), txt_ciudad.getText(), txt_direccion.getText(), txt_telefono.getText(), txt_correo.getText() ,chk_estado.isSelected());
         txt_id.setText("");
         txt_nombre.setText("");
@@ -300,6 +312,9 @@ public class ViewClientes extends javax.swing.JFrame {
         txt_ciudad.setText("");
         txt_correo.setText("");
         chk_estado.setSelected(false);
+       }catch(NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error\n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
     MainClientes mc = new MainClientes();
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
@@ -313,26 +328,42 @@ public class ViewClientes extends javax.swing.JFrame {
             txt_correo.setText("");
             chk_estado.setSelected(false);
         } catch (NumberFormatException erro1) {
-            JOptionPane.showMessageDialog(null, "Error numerico\n");
+            JOptionPane.showMessageDialog(null, "Error\n");
         }
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-        mc.mostrar();
+        
+         try {
+             mc.mostrar();
+         } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error\n");
+        }
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         dispose();
         /*
         esto es para usar en los demas catalogos 
-        */
+        
+                    cbx_provincias.setSelectedItem(obj1);
+            txt_destino.setText(data[1]);
+            txt_tiempo.setText(data[2]);
+            cbx_proveedores.setSelectedItem(obj2);
+            txt_precioespecial.setText(data[4]);
+            txt_dis.setText(data[5]);
+            txt_descri.setText(data[6]);
+            txt_paqueteespe.setText(data[7]);
+            txt_precioespecial.setText(data[8]);
+*/
          //System.out.print(op.getSelectedItem());
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        try {
         String data[] = new String[7];
         data = mc.buscar(Integer.parseInt(txt_id.getText()));
-        try {
+        
             txt_nombre.setText(data[1]);
             txt_ciudad.setText(data[2]);
             txt_direccion.setText(data[3]);
@@ -345,7 +376,7 @@ public class ViewClientes extends javax.swing.JFrame {
             }
         } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null,
-                    "Error numerico\n");
+                    "Error\n");
         }
 
     }//GEN-LAST:event_btn_buscarActionPerformed
@@ -353,8 +384,11 @@ public class ViewClientes extends javax.swing.JFrame {
     private void chk_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_estadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chk_estadoActionPerformed
-String[] elementos = new String[] { "Elemento 1", "Elemento 2",
-				"Elemento 3", "Elemento 4" };
+
+    private void txt_correoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_correoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_correoActionPerformed
+
     /**
      * @param args the command line arguments
      */

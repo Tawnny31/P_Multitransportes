@@ -18,6 +18,7 @@ public class OCDestinos {
     private char estado;
     private int proveedor;
     private String DescriPaEs;
+    private double totalfinal;
     public OCDestinos(){
         this.id=0;
         this.provincia="";
@@ -31,7 +32,16 @@ public class OCDestinos {
         this.distancia="";
         this.proveedor=0;
         this.DescriPaEs="";
+        this.totalfinal=0.00;
         
+    }
+
+    public double getTotalfinal() {
+        return totalfinal;
+    }
+
+    public void setTotalfinal(double totalfinal) {
+        this.totalfinal = totalfinal;
     }
 
     public String getProvincia() {

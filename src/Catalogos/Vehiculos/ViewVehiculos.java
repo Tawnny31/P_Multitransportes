@@ -13,7 +13,9 @@ import javax.swing.JOptionPane;
  * @author jefry
  */
 public class ViewVehiculos extends javax.swing.JFrame {
-     MainVehiculos mh = new MainVehiculos();
+
+    MainVehiculos mh = new MainVehiculos();
+
     /**
      * Creates new form ViewVehiculos
      */
@@ -149,6 +151,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         );
 
         txt_matricula.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_matricula.setText("854125");
         txt_matricula.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_matricula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +160,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         });
 
         txt_marca.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_marca.setText("Nissan");
         txt_marca.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_marca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,6 +169,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         });
 
         txt_modelo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_modelo.setText("S450");
         txt_modelo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_modelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +178,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         });
 
         txt_Cpersonas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_Cpersonas.setText("32");
         txt_Cpersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_Cpersonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,6 +241,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         });
 
         txt_seguro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_seguro.setText("51654");
         txt_seguro.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txt_seguro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -334,7 +341,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
         try {
-            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), String. valueOf(cbx_conductor.getSelectedItem()), Integer.parseInt(txt_seguro.getText()), chk_estado.isSelected());
+            mh.agregar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), String.valueOf(cbx_conductor.getSelectedItem()), Integer.parseInt(txt_seguro.getText()), chk_estado.isSelected());
             txt_matricula.setText("");
             txt_marca.setText("");
             txt_modelo.setText("");
@@ -343,25 +350,30 @@ public class ViewVehiculos extends javax.swing.JFrame {
             chk_estado.setSelected(false);
 
         } catch (NumberFormatException erro1) {
-            JOptionPane.showMessageDialog(null, "Error numerico\n");
+            JOptionPane.showMessageDialog(null, "Error\n");
         }
 
     }//GEN-LAST:event_btn_agregarActionPerformed
 
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
-        mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(),Integer.parseInt(txt_Cpersonas.getText()),String. valueOf(cbx_conductor.getSelectedItem()),Integer.parseInt(txt_seguro.getText()) ,chk_estado.isSelected());
-        txt_matricula.setText("");
-        txt_marca.setText("");
-        txt_modelo.setText("");
-        txt_Cpersonas.setText("");
-        txt_seguro.setText("");
-        chk_estado.setSelected(false);
+        try {
+            mh.modificar(Integer.parseInt(txt_matricula.getText()), txt_marca.getText(), txt_modelo.getText(), Integer.parseInt(txt_Cpersonas.getText()), String.valueOf(cbx_conductor.getSelectedItem()), Integer.parseInt(txt_seguro.getText()), chk_estado.isSelected());
+            txt_matricula.setText("");
+            txt_marca.setText("");
+            txt_modelo.setText("");
+            txt_Cpersonas.setText("");
+            txt_seguro.setText("");
+            chk_estado.setSelected(false);
+        } catch (NumberFormatException erro1) {
+            JOptionPane.showMessageDialog(null, "Error\n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
 
     private void btn_buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscar1ActionPerformed
-        String data[] = new String[7];
-        data = mh.buscar(Integer.parseInt(txt_matricula.getText()));
         try {
+            String data[] = new String[7];
+            data = mh.buscar(Integer.parseInt(txt_matricula.getText()));
+
             txt_marca.setText(data[1]);
             txt_modelo.setText(data[2]);
             txt_Cpersonas.setText(data[3]);
@@ -374,7 +386,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         } catch (NumberFormatException erro1) {
             JOptionPane.showMessageDialog(null,
-                "Error numerico\n");
+                    "Error\n");
         }
     }//GEN-LAST:event_btn_buscar1ActionPerformed
 
@@ -389,13 +401,12 @@ public class ViewVehiculos extends javax.swing.JFrame {
     private void txt_seguroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_seguroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_seguroActionPerformed
-MainConductores maco = new MainConductores();
+    MainConductores maco = new MainConductores();
     private void cbx_conductorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_conductorActionPerformed
-                    cbx_conductor.removeAllItems ();
- String[] Nombres =  maco.llenarcombobox();
-        for(int i = 0; i <  Nombres.length ; i++){
-            cbx_conductor.addItem( Nombres[i]);
-            System.out.print("end point destinos");
+        cbx_conductor.removeAllItems();
+        String[] Nombres = maco.llenarcombobox();
+        for (int i = 0; i < Nombres.length; i++) {
+            cbx_conductor.addItem(Nombres[i]);
         }
     }//GEN-LAST:event_cbx_conductorActionPerformed
 
