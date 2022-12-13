@@ -422,7 +422,8 @@ public class ViewDestinos extends javax.swing.JFrame {
 MainProveedores mp = new MainProveedores();
     MainDestinos md = new MainDestinos();
     private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
-md.modificar(Integer.parseInt(txt_id.getText()),  chk_estado.isSelected(), chk_especial.isSelected());
+        try{
+        md.modificar(Integer.parseInt(txt_id.getText()),  chk_estado.isSelected(), chk_especial.isSelected());
        cbx_proveedores.removeAllItems();
        txt_regularprecio.setText("");
        txt_id.setText("");
@@ -435,6 +436,9 @@ md.modificar(Integer.parseInt(txt_id.getText()),  chk_estado.isSelected(), chk_e
         txt_dis.setText("");
         chk_estado.setSelected(false);
         chk_especial.setSelected(false);
+        }catch(NumberFormatException erroeditar) {
+            JOptionPane.showMessageDialog(null, "Error\n");
+        }
     }//GEN-LAST:event_btn_editarActionPerformed
 
     private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
