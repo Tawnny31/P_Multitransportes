@@ -92,7 +92,7 @@ public class ViewProveedores extends javax.swing.JFrame {
         chk_estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chk_estado.setText("Estado");
 
-        btn_agregar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_agregar.setBackground(new java.awt.Color(205, 205, 235));
         btn_agregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_agregar.setText("Agregar");
         btn_agregar.setBorder(null);
@@ -102,7 +102,7 @@ public class ViewProveedores extends javax.swing.JFrame {
             }
         });
 
-        btn_editar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_editar.setBackground(new java.awt.Color(205, 205, 235));
         btn_editar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setBorder(null);
@@ -123,7 +123,7 @@ public class ViewProveedores extends javax.swing.JFrame {
             }
         });
 
-        btn_ver.setBackground(new java.awt.Color(235, 235, 249));
+        btn_ver.setBackground(new java.awt.Color(205, 205, 235));
         btn_ver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_ver.setText(" Ver Lista");
         btn_ver.setBorder(null);
@@ -217,7 +217,7 @@ public class ViewProveedores extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        btn_buscar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_buscar.setBackground(new java.awt.Color(205, 205, 235));
         btn_buscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_buscar.setText("Buscar");
         btn_buscar.setBorder(null);

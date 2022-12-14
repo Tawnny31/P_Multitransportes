@@ -39,6 +39,7 @@ public class ViewConductores extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         btn_buscar = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,7 +80,7 @@ public class ViewConductores extends javax.swing.JFrame {
         chk_estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chk_estado.setText("Estado");
 
-        btn_agregar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_agregar.setBackground(new java.awt.Color(205, 205, 235));
         btn_agregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_agregar.setText("Agregar");
         btn_agregar.setBorder(null);
@@ -89,7 +90,7 @@ public class ViewConductores extends javax.swing.JFrame {
             }
         });
 
-        btn_editar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_editar.setBackground(new java.awt.Color(205, 205, 235));
         btn_editar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setBorder(null);
@@ -110,7 +111,7 @@ public class ViewConductores extends javax.swing.JFrame {
             }
         });
 
-        btn_ver.setBackground(new java.awt.Color(235, 235, 249));
+        btn_ver.setBackground(new java.awt.Color(205, 205, 235));
         btn_ver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_ver.setText(" Ver Lista");
         btn_ver.setBorder(null);
@@ -204,7 +205,7 @@ public class ViewConductores extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        btn_buscar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_buscar.setBackground(new java.awt.Color(205, 205, 235));
         btn_buscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_buscar.setText("Buscar");
         btn_buscar.setBorder(null);
@@ -232,19 +233,22 @@ public class ViewConductores extends javax.swing.JFrame {
                 .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(15, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(txt_id, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_nombre, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_ciudad, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_telefono, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txt_correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(chk_estado)
-                        .addGap(82, 82, 82)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txt_id, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_nombre, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_ciudad, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_direccion, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_telefono, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txt_correo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(chk_estado)
+                                .addGap(82, 82, 82))))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -271,7 +275,9 @@ public class ViewConductores extends javax.swing.JFrame {
                         .addComponent(txt_correo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(chk_estado)))
-                .addGap(18, 18, 18)
+                .addGap(4, 4, 4)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
                     .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_editar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -397,6 +403,7 @@ try{
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField txt_ciudad;
     private javax.swing.JTextField txt_correo;
     private javax.swing.JTextField txt_direccion;

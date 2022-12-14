@@ -71,16 +71,16 @@ public class ViewVehiculos extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(218, Short.MAX_VALUE)
+                .addContainerGap(207, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(192, 192, 192))
+                .addGap(203, 203, 203))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel7)
-                .addGap(16, 16, 16))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 204));
@@ -190,7 +190,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
         chk_estado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chk_estado.setText("Estado");
 
-        btn_agregar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_agregar.setBackground(new java.awt.Color(205, 205, 235));
         btn_agregar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_agregar.setText("Agregar");
         btn_agregar.setBorder(null);
@@ -200,7 +200,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
-        btn_editar.setBackground(new java.awt.Color(235, 235, 249));
+        btn_editar.setBackground(new java.awt.Color(205, 205, 235));
         btn_editar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_editar.setText("Editar");
         btn_editar.setBorder(null);
@@ -210,7 +210,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
-        btn_buscar1.setBackground(new java.awt.Color(235, 235, 249));
+        btn_buscar1.setBackground(new java.awt.Color(205, 205, 235));
         btn_buscar1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_buscar1.setText("Buscar");
         btn_buscar1.setBorder(null);
@@ -220,7 +220,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
-        btn_ver.setBackground(new java.awt.Color(235, 235, 249));
+        btn_ver.setBackground(new java.awt.Color(205, 205, 235));
         btn_ver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_ver.setText(" Ver Lista");
         btn_ver.setBorder(null);
@@ -257,7 +257,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
             }
         });
 
-        btn_cbx.setBackground(new java.awt.Color(51, 51, 255));
+        btn_cbx.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/agregar.png"))); // NOI18N
         btn_cbx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cbxActionPerformed(evt);
@@ -285,8 +285,8 @@ public class ViewVehiculos extends javax.swing.JFrame {
                             .addComponent(txt_matricula, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_cbx))))))
+                                .addGap(29, 29, 29)
+                                .addComponent(btn_cbx, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -315,12 +315,12 @@ public class ViewVehiculos extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txt_Cpersonas, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbx_conductor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_cbx))
-                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbx_conductor)
+                            .addComponent(btn_cbx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
                         .addComponent(txt_seguro, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(chk_estado))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -330,7 +330,7 @@ public class ViewVehiculos extends javax.swing.JFrame {
                     .addComponent(btn_buscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
